@@ -4,9 +4,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { whyCards } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Why Choose Our IPTV — StreamNova Portugal",
+  title: "Porquê PortugalIPTV — Melhor IPTV Portugal",
   description:
-    "Porquê escolher o serviço IPTV StreamNova em Portugal: estabilidade 4K, Smart TV IPTV, IPTV Smarters e suporte 24/7.",
+    "Porquê escolher o serviço IPTV PortugalIPTV em Portugal: estabilidade 4K, Smart TV IPTV, IPTV Smarters e suporte 24/7.",
 };
 
 export default function WhyUsPage() {

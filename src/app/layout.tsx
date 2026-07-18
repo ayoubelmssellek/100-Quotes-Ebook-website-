@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.defaultTitle,
-    template: "%s | StreamNova",
+    template: "%s | PortugalIPTV",
   },
   description: siteConfig.defaultDescription,
   keywords: [
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "buy iptv portugal",
     "canais iptv",
   ],
-  authors: [{ name: "StreamNova" }],
-  creator: "StreamNova",
+  authors: [{ name: "PortugalIPTV" }],
+  creator: "PortugalIPTV",
   openGraph: {
     type: "website",
     locale: siteConfig.locale,

@@ -49,7 +49,7 @@ function ThankYouContent() {
           </ol>
           <Link
             href={`https://wa.me/${site.whatsappIntl}?text=${encodeURIComponent(
-              `Hi StreamNova, I placed order #${order} for ${plan.productName} (${formatMoney(plan.price)}).`,
+              `Hi PortugalIPTV, I placed order #${order} for ${plan.productName} (${formatMoney(plan.price)}).`,
             )}`}
             target="_blank"
             rel="noopener noreferrer"

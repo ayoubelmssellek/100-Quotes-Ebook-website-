@@ -14,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-line/80 bg-black/90 backdrop-blur-md">
       <div className="section-shell flex h-16 items-center justify-between gap-4 md:h-20">
         <Link href="/" className="text-[16px] font-semibold tracking-[-0.16px] text-white">
-          StreamNova
+          PortugalIPTV
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

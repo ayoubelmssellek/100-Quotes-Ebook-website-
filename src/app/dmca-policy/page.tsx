@@ -8,7 +8,7 @@ export default function DmcaPage() {
       <h1 className="text-[40px] tracking-[-1.2px] text-white">DMCA Policy</h1>
       <div className="mt-8 max-w-3xl space-y-4 text-sm leading-relaxed text-muted">
         <p>
-          StreamNova respects intellectual property. This demo does not host, upload, stream, or distribute copyrighted
+          PortugalIPTV respects intellectual property. This demo does not host, upload, stream, or distribute copyrighted
           media on any server.
         </p>
         <h2 className="text-[20px] text-white">Reporting infringement</h2>

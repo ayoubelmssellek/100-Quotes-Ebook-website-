@@ -4,8 +4,11 @@ import type { Metadata } from "next";
 import FAQ from "@/components/FAQ";
 import JsonLd from "@/components/JsonLd";
 import Pricing from "@/components/Pricing";
+import AnywhereExperience from "@/components/home/AnywhereExperience";
+import BuyOnlineStatement from "@/components/home/BuyOnlineStatement";
+import ChannelsShowcase from "@/components/home/ChannelsShowcase";
+import SportsMatchNight from "@/components/home/SportsMatchNight";
 import {
-  checklistFeatures,
   faqs,
   featureBullets,
   payments,
@@ -17,12 +20,12 @@ import { posts } from "@/data/blog";
 import {
   channelLogos,
   entertainmentBrands,
-  featuredChannelImage,
   featuredSportsImage,
   posterImages,
   sportsBrands,
 } from "@/data/media";
 import { faqJsonLd, productOffersJsonLd, siteConfig } from "@/lib/seo";
+import heroImage from "@/assets/images/hero.png";
 
 export const metadata: Metadata = {
   title: {
@@ -53,7 +56,7 @@ export default function HomePage() {
       {/* CINEMATIC HERO — full bleed */}
       <section className="relative isolate min-h-[100svh] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2400&q=80"
+          src={heroImage}
           alt="Melhor IPTV Portugal — streaming premium 4K"
           title="Melhor IPTV Portugal"
           fill
@@ -64,7 +67,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/30" />
 
         <div className="section-shell relative flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24">
-          <p className="animate-rise label text-white/70">StreamNova · IPTV Portugal</p>
+          <p className="animate-rise label text-white/70">PortugalIPTV · IPTV Portugal</p>
           <h1 className="animate-rise-delay-1 mt-5 max-w-4xl text-[40px] tracking-[-1.2px] text-white md:text-[48px] lg:text-[56px]">
             Melhor IPTV Portugal
           </h1>
@@ -137,177 +140,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURE + EDITORIAL GRID */}
-      <section className="section-shell py-20 md:py-28">
-        <div className="grid items-end gap-12 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-3">
-            <div className="img-frame relative col-span-2 aspect-[16/10]">
-              <Image
-                src={posterImages[0].src}
-                alt={posterImages[0].alt}
-                title={posterImages[0].title}
-                fill
-                className="object-cover"
-                sizes="(max-width:1024px) 100vw, 50vw"
-              />
-            </div>
-            <div className="img-frame relative aspect-[3/4]">
-              <Image
-                src={posterImages[1].src}
-                alt={posterImages[1].alt}
-                title={posterImages[1].title}
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
-            <div className="img-frame relative aspect-[3/4]">
-              <Image
-                src={posterImages[2].src}
-                alt={posterImages[2].alt}
-                title={posterImages[2].title}
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
-          </div>
-          <div>
-            <p className="label">Em qualquer lugar</p>
-            <h2 className="mt-4 text-[36px] tracking-[-0.9px] text-white md:text-[40px]">
-              IPTV 4K Portugal
-            </h2>
-            <p className="mt-5 text-[16px] leading-[1.4] text-slate">
-              Desporto, notícias e entretenimento — Portugal IPTV pensado para casas portuguesas, com canais IPTV
-              estáveis e catálogo VOD.
-            </p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {checklistFeatures.map((item) => (
-                <li key={item} className="text-[14px] text-slate">
-                  <span className="mr-2 text-white">—</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link href="/subscriptions" className="btn btn-solid mt-8" aria-label="Escolher Plano IPTV">
-              Escolher Plano
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* MISSION / PROMO STATEMENT */}
-      <section className="border-y border-line bg-deep py-20 md:py-28">
-        <div className="section-shell max-w-4xl">
-          <p className="label">A escolha certa</p>
-          <h2 className="mt-5 text-[36px] tracking-[-0.9px] text-white md:text-[40px]">
-            Comprar IPTV Online
-          </h2>
-          <p className="mt-6 max-w-2xl text-[16px] leading-[1.4] text-slate">
-            Desporto em direto, entretenimento e os últimos filmes num só serviço IPTV — compare o IPTV preço e
-            obtenha acesso instantâneo ao melhor IPTV Portugal.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/subscriptions" className="btn btn-ghost" aria-label="Buy IPTV Portugal">
-              Comprar Agora
-            </Link>
-            <Link href="/why-us" className="btn btn-solid">
-              Saber mais
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CHANNELS */}
-      <section className="section-shell grid items-center gap-12 py-20 md:grid-cols-2 md:py-28">
-        <div className="img-frame relative aspect-[4/3] bg-black p-8">
-          <Image
-            src={featuredChannelImage.src}
-            alt={featuredChannelImage.alt}
-            title={featuredChannelImage.title}
-            fill
-            className="object-contain p-8"
-            sizes="(max-width:768px) 100vw, 50vw"
-          />
-        </div>
-        <div>
-          <p className="label">Catálogo</p>
-          <h2 className="mt-4 text-[36px] tracking-[-0.9px] text-white md:text-[40px]">
-            Canais IPTV e Sport TV
-          </h2>
-          <p className="mt-5 text-[16px] leading-[1.4] text-slate">
-            Canais portugueses e internacionais. Explore Sport TV IPTV, RTP, SIC e TVI no seu IPTV português.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            {channelLogos.slice(0, 6).map((logo) => (
-              <div key={logo.entity} className="relative h-8 w-16">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  fill
-                  className="object-contain"
-                  sizes="64px"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/channels" className="btn btn-ghost">
-              Lista de canais
-            </Link>
-            <Link href="/subscriptions" className="btn btn-solid" aria-label="Comprar IPTV Online">
-              Comprar Agora
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SPORTS */}
-      <section className="section-shell grid items-center gap-12 pb-20 md:grid-cols-2 md:pb-28">
-        <div className="order-2 md:order-1">
-          <p className="label">Desporto em direto</p>
-          <h2 className="mt-4 text-[36px] tracking-[-0.9px] text-white md:text-[40px]">
-            IPTV Premium para Portugal
-          </h2>
-          <p className="mt-5 text-[16px] leading-[1.4] text-slate">
-            Mais de 2.000 canais de desporto em clareza 4K — Liga Portugal, Champions e Sport TV no seu serviço
-            IPTV.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            {sportsBrands.slice(0, 5).map((brand) => (
-              <div key={brand.entity} className="relative h-8 w-16">
-                <Image
-                  src={brand.src}
-                  alt={brand.alt}
-                  title={brand.title}
-                  fill
-                  className="object-contain"
-                  sizes="64px"
-                />
-              </div>
-            ))}
-          </div>
-          <Link href="#plans" className="btn btn-solid mt-8" aria-label="Escolher Plano IPTV">
-            Escolher Plano
-          </Link>
-        </div>
-        <div className="img-frame relative order-1 aspect-video md:order-2">
-          <Image
-            src={featuredSportsImage.src}
-            alt={featuredSportsImage.alt}
-            title={featuredSportsImage.title}
-            fill
-            className="object-cover"
-            sizes="(max-width:768px) 100vw, 50vw"
-          />
-        </div>
-      </section>
+      <AnywhereExperience posters={posterImages.slice(0, 3)} />
+      <BuyOnlineStatement />
+      <ChannelsShowcase channels={channelLogos} />
+      <SportsMatchNight competitions={sportsBrands} featured={featuredSportsImage} />
 
       {/* LIGHT SECTION — why */}
       <section className="bg-cloud py-20 text-charcoal md:py-28">
         <div className="section-shell">
-          <p className="label !text-[#767d88]">Porquê StreamNova</p>
+          <p className="label !text-[#767d88]">Porquê PortugalIPTV</p>
           <h2 className="mt-4 max-w-2xl text-[36px] tracking-[-0.9px] text-black md:text-[40px]">
             Feito para noites de jogo e binge
           </h2>
@@ -389,7 +230,7 @@ export default function HomePage() {
         <div className="mt-16 border border-line px-6 py-8 text-center">
           <p className="micro text-white">Trustpilot</p>
           <p className="mt-2 text-[24px] text-white">Excelente · ★★★★★</p>
-          <p className="mt-2 text-[13px] text-slate">Com base em avaliações demo da StreamNova</p>
+          <p className="mt-2 text-[13px] text-slate">Com base em avaliações demo da PortugalIPTV</p>
         </div>
       </section>
 

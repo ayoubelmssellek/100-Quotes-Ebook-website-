@@ -1,13 +1,13 @@
 export const site = {
-  name: "StreamNova",
+  name: "PortugalIPTV",
   tagline: "IPTV Portugal — veja mais, pague menos",
-  email: "support@streamnova.demo",
+  email: "support@portugaliptvpro.shop",
   phone: "0673897450",
   whatsappDisplay: "0673897450",
   /** International digits for wa.me (Morocco +212, local 0 dropped) */
   whatsappIntl: "212673897450",
   demoNotice:
-    "A StreamNova é um website de demonstração criado para aprendizagem em Next.js. Não é um serviço IPTV real e não vende acesso a televisão em direto ou conteúdos protegidos.",
+    "A PortugalIPTV é um website de demonstração criado para aprendizagem em Next.js. Não é um serviço IPTV real e não vende acesso a televisão em direto ou conteúdos protegidos.",
 };
 
 export const navLinks = [
@@ -157,7 +157,7 @@ export const plans = {
 export const faqs = [
   {
     q: "Quanto custa o IPTV? Qual é o IPTV preço?",
-    a: "O IPTV preço na StreamNova começa nos planos mensais e desce no anual. Veja a página de planos para comparar e comprar IPTV com o valor certo para si — pagamento único, sem surpresas.",
+    a: "O IPTV preço na PortugalIPTV começa nos planos mensais e desce no anual. Veja a página de planos para comparar e comprar IPTV com o valor certo para si — pagamento único, sem surpresas.",
   },
   {
     q: "Como comprar IPTV Portugal?",
@@ -169,7 +169,7 @@ export const faqs = [
   },
   {
     q: "Qual é o melhor IPTV Portugal?",
-    a: "O melhor IPTV Portugal combina canais IPTV PT, estabilidade 4K, suporte e instalação simples. A StreamNova foca-se em IPTV em Portugal com Sport TV, VOD e IPTV 4K Portugal.",
+    a: "O melhor IPTV Portugal combina canais IPTV PT, estabilidade 4K, suporte e instalação simples. A PortugalIPTV foca-se em IPTV em Portugal com Sport TV, VOD e IPTV 4K Portugal.",
   },
   {
     q: "O que inclui o serviço IPTV?",

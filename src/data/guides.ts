@@ -18,7 +18,7 @@ export const guides: Guide[] = [
     needs: [
       "Fire Stick or Android box online",
       "Stable wifi (15–20 Mbps recommended)",
-      "Active StreamNova demo credentials",
+      "Active PortugalIPTV demo credentials",
       "Downloader / Play Store access",
     ],
     steps: [
@@ -54,7 +54,7 @@ export const guides: Guide[] = [
     needs: [
       "Android 8+ device or Google TV",
       "Google Play access",
-      "StreamNova username / password / server",
+      "PortugalIPTV username / password / server",
     ],
     steps: [
       {
@@ -152,11 +152,11 @@ export const guides: Guide[] = [
     title: "iPhone / iPad",
     short: "IPTV no iPhone e iPad com o melhor IPTV player da App Store.",
     intro:
-      "No iPhone e iPad, instale um IPTV player compatível com Xtream e inicie sessão com os dados StreamNova.",
+      "No iPhone e iPad, instale um IPTV player compatível com Xtream e inicie sessão com os dados PortugalIPTV.",
     needs: [
       "iOS 15+",
       "App Store account",
-      "StreamNova credentials",
+      "PortugalIPTV credentials",
     ],
     steps: [
       {

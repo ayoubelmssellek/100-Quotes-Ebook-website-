@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="mt-auto border-t border-line bg-black">
       <div className="section-shell grid gap-12 py-16 md:grid-cols-4 md:gap-8">
         <div className="md:col-span-1">
-          <p className="text-[16px] font-semibold text-white">StreamNova</p>
+          <p className="text-[16px] font-semibold text-white">PortugalIPTV</p>
           <p className="mt-4 max-w-xs text-[13px] leading-[1.4] tracking-[-0.16px] text-slate">
             IPTV Portugal — o melhor serviço para comprar IPTV online, ver canais IPTV PT e desporto em 4K.
           </p>
@@ -104,7 +104,7 @@ export default function Footer() {
 
       <div className="border-t border-line">
         <div className="section-shell flex flex-col gap-2 py-5 text-[13px] text-footer sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} StreamNova · IPTV PT</p>
+          <p>© 2025 PortugalIPTV · IPTV PT</p>
           <p>Ativação rápida · garantia 7 dias (demo)</p>
         </div>
       </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Como instalar IPTV em Portugal: melhor app IPTV para Smart TV, IPTV Android, box IPTV Android e Fire Stick. Depois de comprar IPTV, siga o guia.",
   openGraph: {
-    title: "Instalar IPTV — Smart TV, App e Box | StreamNova",
+    title: "Instalar IPTV — Smart TV, App e Box | PortugalIPTV",
     description:
       "Guias para IPTV app, Smart TV e box para IPTV. Ativação rápida após comprar o seu serviço IPTV.",
   },

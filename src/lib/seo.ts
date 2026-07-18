@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "StreamNova",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://streamnova.pt",
+  name: "PortugalIPTV",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://portugaliptvpro.shop",
   locale: "pt_PT",
   language: "pt-PT",
   country: "Portugal",
-  defaultTitle: "Melhor IPTV Portugal | Comprar IPTV 4K — StreamNova",
+  defaultTitle: "Melhor IPTV Portugal | Comprar IPTV 4K — PortugalIPTV",
   defaultDescription:
-    "Comprar IPTV Portugal com StreamNova: o melhor IPTV em Portugal com canais PT, Sport TV, filmes e IPTV 4K Portugal. Veja o IPTV preço e escolha o seu serviço IPTV com ativação rápida.",
+    "Comprar IPTV Portugal com PortugalIPTV: o melhor IPTV em Portugal com canais PT, Sport TV, filmes e IPTV 4K Portugal. Veja o IPTV preço e escolha o seu serviço IPTV com ativação rápida.",
 };
 
 type BuildMetadataInput = {
@@ -25,9 +25,9 @@ export function buildMetadata({
   noIndex = false,
 }: BuildMetadataInput = {}): Metadata {
   const pageTitle = title
-    ? title.includes("StreamNova")
+    ? title.includes("PortugalIPTV")
       ? title
-      : `${title} | StreamNova`
+      : `${title} | PortugalIPTV`
     : siteConfig.defaultTitle;
   const url = new URL(path, siteConfig.url).toString();
 
@@ -65,7 +65,7 @@ export function organizationJsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      email: "support@streamnova.demo",
+      email: "support@portugaliptvpro.shop",
       contactType: "customer support",
       availableLanguage: ["Portuguese", "English"],
     },
@@ -128,7 +128,7 @@ export function productOffersJsonLd(plans: OfferPlan[]) {
   return plans.map((plan) => ({
     "@context": "https://schema.org",
     "@type": "Product",
-    name: `${plan.label} — IPTV Portugal StreamNova`,
+    name: `${plan.label} — PortugalIPTV`,
     description: `Serviço IPTV Portugal (${plan.label}). Canais IPTV, desporto e streaming 4K. Ideal para comprar IPTV online.`,
     brand: {
       "@type": "Brand",

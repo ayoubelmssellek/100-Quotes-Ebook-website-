@@ -15,7 +15,7 @@ export default function RefundPolicyPage() {
         <p>All returns must be requested within 7 days of the payment date — demo wording only.</p>
         <h2 className="text-[20px] text-white">How to initiate a refund</h2>
         <p>
-          Contact {site.email}. On a live storefront, staff would confirm within minutes to an hour. StreamNova does
+          Contact {site.email}. On a live storefront, staff would confirm within minutes to an hour. PortugalIPTV does
           not collect payment, so nothing is refunded here.
         </p>
       </div>

@@ -8,7 +8,7 @@ export default function TermsPage() {
       <h1 className="text-[40px] tracking-[-1.2px] text-white">Terms & Conditions</h1>
       <div className="mt-8 max-w-3xl space-y-4 text-sm leading-relaxed text-muted">
         <p>
-          By browsing StreamNova you agree this project is a non-commercial demo for learning Next.js layouts. No real
+          By browsing PortugalIPTV you agree this project is a non-commercial demo for learning Next.js layouts. No real
           products, licenses, or media rights are offered for sale.
         </p>
         <p>

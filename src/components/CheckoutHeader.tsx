@@ -5,7 +5,7 @@ export default function CheckoutHeader({ step }: { step: 1 | 2 }) {
     <header className="border-b border-line bg-black">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-5 sm:px-6">
         <Link href="/" className="text-[16px] font-semibold text-white">
-          StreamNova
+          PortugalIPTV
           <span className="mt-0.5 block text-[11px] font-normal uppercase tracking-[0.35px] text-slate">
             Premium provider
           </span>

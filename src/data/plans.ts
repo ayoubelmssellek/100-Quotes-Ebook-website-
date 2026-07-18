@@ -13,7 +13,7 @@ export function resolvePlan(planId?: string | null, connectionsParam?: string | 
     return {
       id: "3conn",
       label: "1 Year",
-      productName: "1 Year StreamNova Plan · 3 Connections",
+      productName: "1 Year PortugalIPTV Plan · 3 Connections",
       price: 120,
       connections: 3,
     };
@@ -38,7 +38,7 @@ export function resolvePlan(planId?: string | null, connectionsParam?: string | 
   return {
     id: planId || "1y",
     label: selected.label,
-    productName: `${selected.label} StreamNova Plan`,
+    productName: `${selected.label} PortugalIPTV Plan`,
     price,
     connections,
   };

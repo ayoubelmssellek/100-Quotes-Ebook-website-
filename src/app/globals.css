@@ -165,3 +165,17 @@ a {
 .animate-rise-delay-2 {
   animation: fade-up 0.7s ease 0.22s both;
 }
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
