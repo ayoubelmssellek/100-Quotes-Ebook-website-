@@ -13,7 +13,7 @@ const footerColumns = [
   {
     title: "Support",
     links: [
-      { href: "/contact", label: "Contact" },
+      { href: "mailto:hello@mindandhearthub.com", label: "Email Us" },
       { href: "#faq", label: "FAQ" },
       { href: "/refund", label: "Refund Policy" },
     ],

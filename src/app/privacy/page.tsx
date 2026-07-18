@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -26,7 +25,6 @@ export default function PrivacyPage() {
           Information we collect
         </h2>
         <ul className="list-disc space-y-2 pl-5">
-          <li>Contact details you submit via forms (name, email, message).</li>
           <li>
             Purchase-related details processed by our payment providers (Polar,
             Stripe, or Paddle), such as email and transaction identifiers.
@@ -41,7 +39,6 @@ export default function PrivacyPage() {
         </h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>To deliver purchased digital products and customer support.</li>
-          <li>To respond to inquiries submitted through our contact form.</li>
           <li>To protect the site against abuse, fraud, and security threats.</li>
           <li>To improve website reliability and user experience.</li>
         </ul>
@@ -66,10 +63,13 @@ export default function PrivacyPage() {
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">Contact</h2>
         <p>
-          Questions about this policy? Visit our{" "}
-          <Link href="/contact" className="text-[var(--link-blue)] hover:underline">
-            contact page
-          </Link>
+          Questions about this policy? Email us at{" "}
+          <a
+            href="mailto:hello@mindandhearthub.com"
+            className="text-[var(--link-blue)] hover:underline"
+          >
+            hello@mindandhearthub.com
+          </a>
           .
         </p>
       </div>

@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { startCheckout } from "@/features/contact/actions";
+import { startCheckout } from "@/features/payments/actions";
 import { formatPrice } from "@/lib/utils";
 import type { BookProduct } from "@/types/product";
 
