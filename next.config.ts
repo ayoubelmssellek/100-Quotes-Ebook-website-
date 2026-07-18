@@ -8,10 +8,11 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://api.polar.sh https://api.stripe.com https://sandbox-api.paddle.com https://api.paddle.com",
+  "connect-src 'self' https://api.polar.sh https://sandbox-api.polar.sh https://api.stripe.com https://sandbox-api.paddle.com https://api.paddle.com",
+  "frame-src 'self' https://polar.sh https://sandbox.polar.sh",
   "frame-ancestors 'none'",
   "base-uri 'self'",
-  "form-action 'self' https://checkout.polar.sh https://checkout.stripe.com https://buy.paddle.com https://sandbox-buy.paddle.com",
+  "form-action 'self' https://polar.sh https://sandbox.polar.sh https://checkout.stripe.com https://buy.paddle.com https://sandbox-buy.paddle.com",
   "object-src 'none'",
   "upgrade-insecure-requests",
 ].join("; ");

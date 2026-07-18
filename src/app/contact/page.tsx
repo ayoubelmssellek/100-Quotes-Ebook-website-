@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactForm } from "@/features/contact/components/contact-form";
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function ContactPage() {
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
         Need help with your purchase or download? Send your message to our
-        support Gmail and we’ll reply as soon as possible.
+        support email and we’ll reply as soon as possible.
       </p>
 
       <div className="mt-8 rounded-lg border border-[var(--hairline)] bg-[var(--surface)] p-6 md:p-8">
@@ -38,23 +37,13 @@ export default function ContactPage() {
         >
           {SUPPORT_EMAIL}
         </a>
+        <p className="mt-4 text-sm leading-relaxed text-[var(--slate)]">
+          Include your order email and a short description of your question so
+          we can help you faster.
+        </p>
         <Button asChild size="lg" className="mt-6 w-full sm:w-auto">
           <a href={SUPPORT_MAILTO}>Email Support</a>
         </Button>
-      </div>
-
-      <div className="mt-8 rounded-lg border border-[var(--hairline)] p-6 md:p-8">
-        <p className="mb-6 text-sm leading-relaxed text-[var(--slate)]">
-          Or use the form below. You can also email us anytime at{" "}
-          <a
-            href={SUPPORT_MAILTO}
-            className="font-medium text-[var(--link-blue)] hover:underline"
-          >
-            {SUPPORT_EMAIL}
-          </a>
-          .
-        </p>
-        <ContactForm />
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { startCheckout } from "@/features/contact/actions";
 import { formatPrice } from "@/lib/utils";
 import type { BookProduct } from "@/types/product";
 
@@ -9,7 +9,15 @@ type PricingSectionProps = {
 };
 
 export function PricingSection({ book }: PricingSectionProps) {
-  const provider = process.env.PAYMENT_PROVIDER ?? "polar";
+  const polarProductId =
+    process.env.POLAR_PRODUCT_ID || process.env.NEXT_PUBLIC_POLAR_PRODUCT_ID;
+  const checkoutConfigured = Boolean(
+    process.env.POLAR_ACCESS_TOKEN && polarProductId,
+  );
+
+  const checkoutHref = polarProductId
+    ? `/api/checkout?products=${encodeURIComponent(polarProductId)}`
+    : "/contact";
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[var(--surface)] py-16 md:py-24">
@@ -66,18 +74,15 @@ export function PricingSection({ book }: PricingSectionProps) {
               ))}
             </ul>
 
-            <form action={startCheckout} className="mt-8">
-              <input type="hidden" name="productId" value={book.id} />
-              <input type="hidden" name="slug" value={book.slug} />
-              <input type="hidden" name="provider" value={provider} />
-              <Button type="submit" size="lg" className="w-full">
-                Buy Now
-              </Button>
-            </form>
+            <Button asChild size="lg" className="mt-8 w-full">
+              <Link href={checkoutHref}>
+                {checkoutConfigured ? "Buy Now" : "Contact Support to Buy"}
+              </Link>
+            </Button>
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
-              Secure checkout via Polar, Stripe, or Paddle. Payment secrets never
-              touch the browser.
+              Secure checkout powered by Polar. Payment secrets never touch the
+              browser.
             </p>
           </article>
         </div>

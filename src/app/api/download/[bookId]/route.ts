@@ -2,6 +2,11 @@ import { createReadStream, existsSync, statSync } from "fs";
 import path from "path";
 import { Readable } from "stream";
 import { NextRequest, NextResponse } from "next/server";
+import {
+  isCheckoutMarkedPaid,
+  markCheckoutPaid,
+} from "@/features/payments/orders";
+import { verifyPolarCheckout } from "@/features/payments/polar-verify";
 import { getClientIp, rateLimit } from "@/lib/security/rate-limit";
 
 const ALLOWED_FILES: Record<string, string> = {
@@ -29,17 +34,37 @@ export async function GET(
     return NextResponse.json({ error: "File not found." }, { status: 404 });
   }
 
-  // In production, require a checkout session id from the payment provider.
-  const sessionId = request.nextUrl.searchParams.get("session_id");
+  const checkoutId =
+    request.nextUrl.searchParams.get("checkout_id") ||
+    request.nextUrl.searchParams.get("session_id");
   const isDemo =
     process.env.NODE_ENV !== "production" &&
     request.nextUrl.searchParams.get("demo") === "1";
 
-  if (!sessionId && !isDemo) {
+  if (!checkoutId && !isDemo) {
     return NextResponse.json(
       { error: "Authorized purchase session required." },
       { status: 401 },
     );
+  }
+
+  if (checkoutId && !isDemo) {
+    let authorized = isCheckoutMarkedPaid(checkoutId);
+
+    if (!authorized && process.env.POLAR_ACCESS_TOKEN) {
+      const verified = await verifyPolarCheckout(checkoutId);
+      if (verified.valid) {
+        markCheckoutPaid(checkoutId, { email: verified.email ?? undefined });
+        authorized = true;
+      }
+    }
+
+    if (!authorized) {
+      return NextResponse.json(
+        { error: "Purchase not verified yet. Please wait a moment and try again." },
+        { status: 403 },
+      );
+    }
   }
 
   const filePath = path.join(process.cwd(), "content", "books", fileName);

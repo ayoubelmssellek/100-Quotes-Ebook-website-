@@ -45,11 +45,7 @@ export default function RefundPage() {
             className="text-[var(--link-blue)] hover:underline"
           >
             support@mindandhearthub.shop
-          </a>{" "}
-          or via the{" "}
-          <Link href="/contact" className="text-[var(--link-blue)] hover:underline">
-            contact form
-          </Link>
+          </a>
           . We review each request carefully and respond as quickly as possible.
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">

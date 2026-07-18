@@ -41,7 +41,7 @@ export default function PrivacyPage() {
         </h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>To deliver purchased digital products and customer support.</li>
-          <li>To respond to inquiries submitted through our contact form.</li>
+          <li>To respond to support emails sent to support@mindandhearthub.shop.</li>
           <li>To protect the site against abuse, fraud, and security threats.</li>
           <li>To improve website reliability and user experience.</li>
         </ul>
