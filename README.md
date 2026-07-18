@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mind & Heart Hub — E-book Sales Website
 
-## Getting Started
+Premium Next.js storefront for digital e-books, starting with:
 
-First, run the development server:
+**100 Inspirational Quotes for Self-Improvement – Part 1**
+
+## Stack
+
+- Next.js 15 (App Router)
+- TypeScript (strict)
+- Tailwind CSS 4
+- shadcn-style UI primitives
+- Zod + React Hook Form
+- Polar / Stripe / Paddle payment adapters
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See `.env.example`. Never commit secrets. Payment credentials are server-only.
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                  # Routes, SEO, API
+  components/           # UI + layout + sections
+  features/
+    books/              # Product catalog + landing composition
+    payments/           # Reusable Polar/Stripe/Paddle services
+    contact/            # Contact form + server actions
+  lib/security/         # Rate limit, CSRF helpers, secure cookies
+  types/                # Shared domain types
+content/books/          # Private digital files (not publicly listed)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add a new book by extending `src/features/books/data/books.ts`. Dynamic routes at `/books/[slug]` pick it up automatically.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Payments
 
-## Deploy on Vercel
+Set `PAYMENT_PROVIDER` to `polar`, `stripe`, or `paddle`, then fill the matching secrets in `.env.local`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Without credentials, checkout falls back to a demo success page in development.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+- `npm run dev` — local development
+- `npm run build` — production build
+- `npm run start` — serve production build
+- `npm run lint` — ESLint
+- `npm run format` — Prettier
