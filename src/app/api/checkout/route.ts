@@ -71,6 +71,7 @@ export async function GET(req: NextRequest) {
       products,
       successUrl,
       returnUrl,
+      allowDiscountCodes: false,
     });
 
     if (!checkout.url) {
