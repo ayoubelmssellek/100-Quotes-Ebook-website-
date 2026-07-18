@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 const footerColumns = [
   {
@@ -13,7 +14,7 @@ const footerColumns = [
   {
     title: "Support",
     links: [
-      { href: "mailto:hello@mindandhearthub.com", label: "Email Us" },
+      { href: "/contact", label: "Contact" },
       { href: "#faq", label: "FAQ" },
       { href: "/refund", label: "Refund Policy" },
     ],
@@ -41,6 +42,15 @@ export function SiteFooter() {
             inspiration.
           </p>
           <p className="text-sm text-[var(--stone)]">@mind_and_heart_hub</p>
+          <p className="text-sm text-[var(--steel)]">
+            Support:{" "}
+            <a
+              href={SUPPORT_MAILTO}
+              className="font-medium text-[var(--link-blue)] hover:underline"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+          </p>
         </div>
 
         {footerColumns.map((column) => (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -54,13 +55,17 @@ export default function TermsPage() {
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">Contact</h2>
         <p>
-          For questions about these terms, email us at{" "}
+          For questions about these terms, email{" "}
           <a
-            href="mailto:hello@mindandhearthub.com"
+            href="mailto:support@mindandhearthub.shop"
             className="text-[var(--link-blue)] hover:underline"
           >
-            hello@mindandhearthub.com
-          </a>
+            support@mindandhearthub.shop
+          </a>{" "}
+          or visit our{" "}
+          <Link href="/contact" className="text-[var(--link-blue)] hover:underline">
+            contact page
+          </Link>
           .
         </p>
       </div>

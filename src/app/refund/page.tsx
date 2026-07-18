@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
@@ -40,11 +41,15 @@ export default function RefundPage() {
           Contact us within 7 days of purchase with your order email and
           transaction ID at{" "}
           <a
-            href="mailto:hello@mindandhearthub.com"
+            href="mailto:support@mindandhearthub.shop"
             className="text-[var(--link-blue)] hover:underline"
           >
-            hello@mindandhearthub.com
-          </a>
+            support@mindandhearthub.shop
+          </a>{" "}
+          or via the{" "}
+          <Link href="/contact" className="text-[var(--link-blue)] hover:underline">
+            contact form
+          </Link>
           . We review each request carefully and respond as quickly as possible.
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">

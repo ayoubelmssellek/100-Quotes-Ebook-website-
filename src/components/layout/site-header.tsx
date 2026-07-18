@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#preview", label: "Preview" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
+  { href: "/contact", label: "Support" },
 ];
 
 export function SiteHeader() {
