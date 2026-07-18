@@ -1,5 +1,6 @@
 import { AboutSection } from "@/components/sections/about-section";
 import { BenefitsSection } from "@/components/sections/benefits-section";
+import { ConsultationSection } from "@/components/sections/consultation-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -21,6 +22,7 @@ export function BookLanding({ book }: BookLandingProps) {
       <PreviewSection book={book} />
       <TestimonialsSection book={book} />
       <PricingSection book={book} />
+      <ConsultationSection />
       <FaqSection book={book} />
       <ContactSection />
     </>
