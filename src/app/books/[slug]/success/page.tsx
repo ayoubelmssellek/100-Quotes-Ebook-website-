@@ -9,6 +9,7 @@ type SuccessPageProps = {
     demo?: string;
     session_id?: string;
     checkout_id?: string;
+    checkoutId?: string;
   }>;
 };
 
@@ -19,7 +20,8 @@ export default async function CheckoutSuccessPage({
   const { slug } = await params;
   const query = await searchParams;
   const book = getBookBySlug(slug);
-  const checkoutId = query.checkout_id || query.session_id;
+  const checkoutId =
+    query.checkout_id || query.checkoutId || query.session_id;
   const isDemo = query.demo === "1" && !checkoutId;
 
   const downloadHref = isDemo
