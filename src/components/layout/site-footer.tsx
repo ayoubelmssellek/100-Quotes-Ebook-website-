@@ -5,9 +5,9 @@ const footerColumns = [
   {
     title: "Product",
     links: [
-      { href: "#about", label: "About the Book" },
-      { href: "#preview", label: "Preview" },
-      { href: "#pricing", label: "Pricing" },
+      { href: "/#about", label: "About the Book" },
+      { href: "/#preview", label: "Preview" },
+      { href: "/#pricing", label: "Pricing" },
       { href: "/books/100-inspirational-quotes-for-self-improvement", label: "Book Page" },
     ],
   },
@@ -15,7 +15,7 @@ const footerColumns = [
     title: "Support",
     links: [
       { href: "/contact", label: "Contact" },
-      { href: "#faq", label: "FAQ" },
+      { href: "/#faq", label: "FAQ" },
       { href: "/refund", label: "Refund Policy" },
     ],
   },

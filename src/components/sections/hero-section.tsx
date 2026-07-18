@@ -51,10 +51,10 @@ export function HeroSection({ book }: HeroSectionProps) {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
             <Button asChild size="lg">
-              <Link href="#pricing">Buy Now</Link>
+              <Link href="/#pricing">Buy Now</Link>
             </Button>
             <Button asChild variant="secondary-on-dark" size="lg">
-              <Link href="#preview">Preview Book</Link>
+              <Link href="/#preview">Preview Book</Link>
             </Button>
           </div>
         </div>

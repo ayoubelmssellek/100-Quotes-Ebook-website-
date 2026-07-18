@@ -3,12 +3,12 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#benefits", label: "Benefits" },
-  { href: "#preview", label: "Preview" },
-  { href: "#pricing", label: "Book" },
-  { href: "#consultation", label: "Consultation" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#about", label: "About" },
+  { href: "/#benefits", label: "Benefits" },
+  { href: "/#preview", label: "Preview" },
+  { href: "/#pricing", label: "Book" },
+  { href: "/#consultation", label: "Consultation" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/contact", label: "Support" },
 ];
 
@@ -37,7 +37,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="#pricing">Buy Now</Link>
+            <Link href="/#pricing">Buy Now</Link>
           </Button>
           <details className="relative md:hidden">
             <summary className="flex h-10 w-10 list-none items-center justify-center rounded-md border border-[var(--hairline)] text-[var(--ink)] [&::-webkit-details-marker]:hidden">
@@ -56,7 +56,7 @@ export function SiteHeader() {
                   </Link>
                 ))}
                 <Button asChild className="mt-2 w-full">
-                  <Link href="#pricing">Buy Now</Link>
+                  <Link href="/#pricing">Buy Now</Link>
                 </Button>
               </nav>
             </div>
