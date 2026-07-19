@@ -11,7 +11,6 @@ import SportsMatchNight from "@/components/home/SportsMatchNight";
 import {
   faqs,
   featureBullets,
-  payments,
   plans,
   testimonials,
   whyCards,
@@ -21,6 +20,7 @@ import {
   channelLogos,
   entertainmentBrands,
   featuredSportsImage,
+  paymentMethods,
   posterImages,
   sportsBrands,
 } from "@/data/media";
@@ -220,13 +220,20 @@ export default function HomePage() {
       {/* PAYMENTS + TRUST */}
       <section className="section-shell py-16 md:py-24">
         <p className="label text-center">Pagamentos seguros</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          {payments.map((p) => (
-            <span key={p} className="text-[14px] uppercase tracking-[0.35px] text-muted">
-              {p}
-            </span>
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4" aria-label="Métodos de pagamento">
+          {paymentMethods.map((method) => (
+            <li key={method.entity} className="relative h-9 w-[72px] sm:h-10 sm:w-20">
+              <Image
+                src={method.src}
+                alt={method.alt}
+                title={method.title}
+                fill
+                className="object-contain"
+                sizes="80px"
+              />
+            </li>
           ))}
-        </div>
+        </ul>
         <div className="mt-16 border border-line px-6 py-8 text-center">
           <p className="micro text-white">Trustpilot</p>
           <p className="mt-2 text-[24px] text-white">Excelente · ★★★★★</p>

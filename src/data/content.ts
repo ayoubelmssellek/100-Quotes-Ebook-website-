@@ -233,5 +233,3 @@ export const testimonials = [
     text: "One plan, every screen in the apartment. Renewing was simpler than my old cable login.",
   },
 ];
-
-export const payments = ["Visa", "Mastercard", "Amex", "PayPal", "Apple Pay", "Google Pay", "Bitcoin"];

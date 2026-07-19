@@ -20,7 +20,7 @@ import rtpPlay from "@/assets/entertainment-brands/rtp-play-commercial.jpg";
 import skyshowtime from "@/assets/entertainment-brands/skyshowtime-commercial.jpg";
 
 import avatarTheWayOfWater from "@/assets/movies/avatar-the-way-of-water-informational.jpg";
-import barbie from "@/assets/movies/barbie-informational.jpg";
+import theOdesy from "@/assets/movies/the-odesy-informational.png";
 import deadpoolWolverine from "@/assets/movies/deadpool-wolverine-informational.jpg";
 import dunePartTwo from "@/assets/movies/dune-part-two-informational.jpg";
 import gladiatorIi from "@/assets/movies/gladiator-ii-informational.jpg";
@@ -29,6 +29,12 @@ import johnWickChapter4 from "@/assets/movies/john-wick-chapter-4-informational.
 import oppenheimer from "@/assets/movies/oppenheimer-informational.jpg";
 import spiderManNoWayHome from "@/assets/movies/spider-man-no-way-home-informational.jpg";
 import topGunMaverick from "@/assets/movies/top-gun-maverick-informational.jpg";
+
+import applePay from "@/assets/payments/apple-pay.jpg";
+import googlePay from "@/assets/payments/google-pay.jpg";
+import mastercard from "@/assets/payments/mastercard.jpg";
+import paypal from "@/assets/payments/paypal.jpg";
+import visa from "@/assets/payments/visa.jpg";
 
 import championsLeague from "@/assets/sports-brands/champions-league-commercial.jpg";
 import formula1 from "@/assets/sports-brands/formula-1-commercial.jpg";
@@ -235,11 +241,11 @@ export const sportsBrands: SeoImage[] = [
 
 export const moviePosters: SeoImage[] = [
   {
-    src: barbie,
-    alt: "Barbie Movie Poster",
-    title: "Barbie",
+    src: theOdesy,
+    alt: "The Odyssey Movie Poster IPTV Portugal",
+    title: "The Odyssey",
     keyword: "informational",
-    entity: "Barbie",
+    entity: "The Odyssey",
   },
   {
     src: oppenheimer,
@@ -370,3 +376,41 @@ export const posterImages: SeoImage[] = [
 
 export const featuredChannelImage = channelLogos[0];
 export const featuredSportsImage = sportsBrands[0];
+
+export const paymentMethods: SeoImage[] = [
+  {
+    src: visa,
+    alt: "Visa — pagamento seguro PortugalIPTV",
+    title: "Visa",
+    keyword: "commercial",
+    entity: "Visa",
+  },
+  {
+    src: mastercard,
+    alt: "Mastercard — pagamento seguro PortugalIPTV",
+    title: "Mastercard",
+    keyword: "commercial",
+    entity: "Mastercard",
+  },
+  {
+    src: paypal,
+    alt: "PayPal — pagamento seguro PortugalIPTV",
+    title: "PayPal",
+    keyword: "commercial",
+    entity: "PayPal",
+  },
+  {
+    src: applePay,
+    alt: "Apple Pay — pagamento seguro PortugalIPTV",
+    title: "Apple Pay",
+    keyword: "commercial",
+    entity: "Apple Pay",
+  },
+  {
+    src: googlePay,
+    alt: "Google Pay — pagamento seguro PortugalIPTV",
+    title: "Google Pay",
+    keyword: "commercial",
+    entity: "Google Pay",
+  },
+];
