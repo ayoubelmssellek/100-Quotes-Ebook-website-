@@ -24,8 +24,8 @@ export function ConsultationSection() {
             Personal guidance subscriptions
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
-            Choose a monthly consultation plan that fits your goals. Prices are
-            flexible and can be updated anytime.
+            Choose a consultation package that fits your timeline — from 1 month
+            to a full year.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export function ConsultationSection() {
                     {formatPrice(plan.price, plan.currency)}
                   </p>
                   <p className="mb-1 text-sm text-[var(--steel)]">
-                    /{plan.interval === "month" ? "mo" : "once"}
+                    /{plan.intervalLabel}
                   </p>
                 </div>
 
