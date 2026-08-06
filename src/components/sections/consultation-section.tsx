@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/shared/checkout-button";
 import { getConsultationPlans } from "@/features/consultations/data/plans";
 import { formatPrice } from "@/lib/utils";
 import { SUPPORT_MAILTO } from "@/lib/site";
@@ -83,14 +83,14 @@ export function ConsultationSection() {
                   ))}
                 </ul>
 
-                <Button
-                  asChild
+                <CheckoutButton
+                  href={checkoutHref}
                   size="lg"
                   className="mt-8 w-full"
                   variant={plan.featured ? "primary" : "secondary"}
                 >
-                  <Link href={checkoutHref}>{plan.ctaLabel}</Link>
-                </Button>
+                  {plan.ctaLabel}
+                </CheckoutButton>
               </article>
             );
           })}

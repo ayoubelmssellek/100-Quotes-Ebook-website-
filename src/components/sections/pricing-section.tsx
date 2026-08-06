@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/shared/checkout-button";
 import { formatPrice } from "@/lib/utils";
 import type { BookProduct } from "@/types/product";
 
@@ -74,11 +73,9 @@ export function PricingSection({ book }: PricingSectionProps) {
               ))}
             </ul>
 
-            <Button asChild size="lg" className="mt-8 w-full">
-              <Link href={checkoutHref}>
-                {checkoutConfigured ? "Buy Now" : "Contact Support to Buy"}
-              </Link>
-            </Button>
+            <CheckoutButton href={checkoutHref} size="lg" className="mt-8 w-full">
+              {checkoutConfigured ? "Buy Now" : "Contact Support to Buy"}
+            </CheckoutButton>
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
               Secure checkout powered by Polar. Payment secrets never touch the
