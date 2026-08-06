@@ -60,17 +60,12 @@ export async function GET(req: NextRequest) {
       ? `${siteUrl}/consultation/success?checkout_id={CHECKOUT_ID}${plan ? `&plan=${encodeURIComponent(plan)}` : ""}`
       : `${siteUrl}/books/100-inspirational-quotes-for-self-improvement/success?checkout_id={CHECKOUT_ID}`;
 
-  const returnUrl =
-    type === "consultation"
-      ? `${siteUrl}/#consultation`
-      : `${siteUrl}/#pricing`;
-
   try {
     const polar = new Polar({ accessToken, server });
+    // Do not pass returnUrl — Polar only shows the back arrow when returnUrl is set.
     const checkout = await polar.checkouts.create({
       products,
       successUrl,
-      returnUrl,
       allowDiscountCodes: false,
     });
 
