@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { CheckoutButton } from "@/components/shared/checkout-button";
 import { getConsultationPlans } from "@/features/consultations/data/plans";
 import { formatPrice } from "@/lib/utils";
