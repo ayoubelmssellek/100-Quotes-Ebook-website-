@@ -52,13 +52,7 @@ export async function GET(req: NextRequest) {
   }
 
   const siteUrl = getSiteUrl(req);
-  const type = url.searchParams.get("type");
-  const plan = url.searchParams.get("plan");
-
-  const successUrl =
-    type === "consultation"
-      ? `${siteUrl}/consultation/success?checkout_id={CHECKOUT_ID}${plan ? `&plan=${encodeURIComponent(plan)}` : ""}`
-      : `${siteUrl}/books/100-inspirational-quotes-for-self-improvement/success?checkout_id={CHECKOUT_ID}`;
+  const successUrl = `${siteUrl}/books/100-inspirational-quotes-for-self-improvement/success?checkout_id={CHECKOUT_ID}`;
 
   try {
     const polar = new Polar({ accessToken, server });

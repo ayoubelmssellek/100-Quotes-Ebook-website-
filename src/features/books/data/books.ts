@@ -191,9 +191,8 @@ export const books: BookProduct[] = [
       },
     ],
     pricing: {
-      price: 9.99,
-      currency: "USD",
-      compareAtPrice: 14.99,
+      price: 40,
+      currency: "EUR",
       features: [
         "100 inspirational quotes",
         "Instant PDF download",
