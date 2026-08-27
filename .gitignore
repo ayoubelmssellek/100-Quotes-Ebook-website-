@@ -44,5 +44,5 @@ next-env.d.ts
 
 # Product PDFs live on Whop — do not keep in this repo
 content/books/**/*.pdf
-
+product-pdfs/
 

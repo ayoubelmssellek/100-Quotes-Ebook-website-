@@ -128,7 +128,7 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_QUOTES",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES",
     },
     seo: {
       title: "100 Inspirational Quotes for Self-Improvement | E-book $12",
@@ -252,7 +252,7 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_EVERYDAY",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY",
     },
     seo: {
       title: "Everyday Motivation | 54-Page Motivational E-book $12",
@@ -320,7 +320,7 @@ const coreProducts: DigitalProduct[] = [
         "Instant download on release",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_CLIPART",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_CLIPART",
     },
     seo: {
       title: "Black & White Animal Clipart Pack | Digital Download",
@@ -386,7 +386,7 @@ const coreProducts: DigitalProduct[] = [
         "Printable + digital use",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_VINTAGE",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_VINTAGE",
     },
     seo: {
       title: "50 Vintage Digital Templates | Printable Template Pack",

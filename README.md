@@ -27,21 +27,20 @@ npm run dev
 
 Products live in `src/features/products/data/catalog.ts`. Add PDFs under `content/books/` and map them in `src/app/api/download/[bookId]/route.ts`.
 
-## Payments
+## Payments (Whop)
 
-Buy Now uses external checkout URLs (Stripe Payment Link, Lemon Squeezy, Gumroad, etc.):
+Create each product on Whop, upload the files there, then paste the **checkout URL** into `.env` / Vercel:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://www.mindandhearthub.shop
-NEXT_PUBLIC_CHECKOUT_URL=https://fallback-checkout-link
-NEXT_PUBLIC_CHECKOUT_URL_QUOTES=
-NEXT_PUBLIC_CHECKOUT_URL_EVERYDAY=
-DOWNLOAD_ACCESS_TOKEN=long-random-secret
+PAYMENT_PROVIDER=whop
+NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES=https://whop.com/checkout/...
+NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY=https://whop.com/checkout/...
+NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01=https://whop.com/checkout/...
+# ... see .env.example for all keys
 ```
 
-Set each product’s success redirect to:
-
-`https://www.mindandhearthub.shop/books/<product-slug>/success`
+**Buy Now** on the site redirects to that Whop link. Whop handles payment + file delivery.  
+Change a link anytime in env vars — no code change.
 
 ## Scripts
 

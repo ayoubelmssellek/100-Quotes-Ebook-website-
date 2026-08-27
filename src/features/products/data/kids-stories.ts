@@ -166,7 +166,12 @@ const sharedKidsFaqs: DigitalProduct["faqs"] = [
   {
     question: "What format do I get?",
     answer:
-      "You receive a high-quality PDF you can read on phone, tablet, or computer, and print at home if you like.",
+      "You receive a high-quality PDF via Whop after checkout. Read it on phone, tablet, or computer, and print at home if you like.",
+  },
+  {
+    question: "How do I get the files after paying?",
+    answer:
+      "Buy Now opens Whop checkout. After payment, Whop gives you instant access to download your files from your Whop account.",
   },
   {
     question: "Can I buy packs instead of one book?",
@@ -239,10 +244,10 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
       features: [
         "1 illustrated kids science PDF",
         `${story.pageCount} pages`,
-        "Instant download",
+        "Instant access via Whop after payment",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_KIDS_SINGLE",
+      checkoutUrlEnv: `NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_${String(story.num).padStart(2, "0")}`,
     },
     seo: {
       title: `${story.title} | Kids Science Story PDF $12`,
@@ -316,7 +321,7 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant downloads",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_KIDS_PACK5",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PACK5",
     },
     seo: {
       title: "Kids Science Stories Pack (5 Books) | $28",
@@ -384,7 +389,7 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Lifetime access",
         "Best PDF pack value",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_KIDS_PACK10",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PACK10",
     },
     seo: {
       title: "Kids Science Stories Complete Pack (10 Books) | $35",
@@ -459,7 +464,7 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant download",
         "Lifetime access to your links file",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_CHECKOUT_URL_KIDS_CANVA",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_CANVA",
     },
     seo: {
       title: "Kids Science Stories Canva Editable Pack | $50",
