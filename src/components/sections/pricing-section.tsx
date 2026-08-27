@@ -90,9 +90,7 @@ export function PricingSection({ book }: PricingSectionProps) {
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
               {isComingSoon
                 ? "We’ll let you know when this product launches."
-                : checkoutUrl
-                  ? "Secure Whop checkout. After you pay, Whop delivers your files."
-                  : "Add this product’s Whop checkout URL in .env to activate Pay now."}
+                : "Secure Whop checkout. After you pay, Whop delivers your files."}
             </p>
           </article>
         </div>
