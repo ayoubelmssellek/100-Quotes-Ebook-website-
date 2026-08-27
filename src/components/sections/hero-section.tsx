@@ -64,16 +64,16 @@ export function HeroSection({ book }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[420px] animate-fade-up [animation-delay:120ms] lg:mr-0 lg:max-w-none">
-          <div className="overflow-hidden rounded-lg border border-white/10 bg-[var(--canvas)] shadow-[rgba(15,15,15,0.20)_0px_24px_48px_-8px]">
+        <div className="relative mx-auto w-full max-w-[440px] animate-fade-up [animation-delay:120ms] lg:mr-0 lg:max-w-none">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(160deg,#eef1f6_0%,#f7f5f1_55%,#ebe7e0_100%)] p-5 shadow-[rgba(15,15,15,0.28)_0px_28px_56px_-12px] sm:p-6">
             <Image
               src={book.coverImage}
               alt={`Cover of ${book.title}`}
               width={900}
               height={1200}
               priority
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 768px) 90vw, 420px"
+              className="mx-auto h-auto max-h-[560px] w-full object-contain drop-shadow-[0_12px_28px_rgba(15,15,15,0.22)]"
+              sizes="(max-width: 768px) 90vw, 440px"
             />
           </div>
         </div>
