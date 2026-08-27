@@ -42,8 +42,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Digital product PDFs (large — keep local for downloads; do not push to GitHub)
-content/books/kids-stories/*.pdf
+# Source folder only (site uses content/books/kids-stories/)
 kids stories/
-content/books/*.pdf
-!content/books/.gitkeep
