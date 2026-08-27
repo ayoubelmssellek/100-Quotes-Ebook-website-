@@ -36,7 +36,6 @@ export type ProductPricing = {
   currency: string;
   compareAtPrice?: number;
   features: string[];
-  polarProductId?: string;
   stripePriceId?: string;
   paddlePriceId?: string;
 };

@@ -1,4 +1,4 @@
-export type PaymentProvider = "polar" | "stripe" | "paddle";
+export type PaymentProvider = "stripe" | "paddle" | "external";
 
 export type CheckoutSessionInput = {
   productId: string;
@@ -28,8 +28,14 @@ export interface PaymentService {
 
 export function getDefaultPaymentProvider(): PaymentProvider {
   const configured = process.env.PAYMENT_PROVIDER?.toLowerCase();
-  if (configured === "stripe" || configured === "paddle" || configured === "polar") {
+  if (configured === "stripe" || configured === "paddle" || configured === "external") {
     return configured;
   }
-  return "polar";
+  return "external";
+}
+
+/** Public checkout link for the ebook (Stripe Payment Link, Gumroad, Lemon Squeezy, etc.) */
+export function getExternalCheckoutUrl(): string | undefined {
+  const url = process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim();
+  return url || undefined;
 }

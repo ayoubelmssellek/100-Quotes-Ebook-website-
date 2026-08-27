@@ -12,7 +12,7 @@ type CheckoutButtonProps = {
 };
 
 /**
- * Starts checkout without leaving the plans page in browser history.
+ * Starts checkout without keeping pricing in browser history.
  * location.replace prevents Back from returning to the previous section.
  */
 export function CheckoutButton({
@@ -22,12 +22,12 @@ export function CheckoutButton({
   size = "lg",
   className,
 }: CheckoutButtonProps) {
-  const isCheckout =
-    href.startsWith("/api/checkout") ||
-    href.includes("buy.polar.sh") ||
-    href.includes("polar.sh/checkout");
+  const isExternalCheckout =
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("/api/checkout");
 
-  if (!isCheckout) {
+  if (!isExternalCheckout || href.startsWith("mailto:")) {
     return (
       <Button asChild variant={variant} size={size} className={className}>
         <a href={href}>{children}</a>
@@ -42,7 +42,6 @@ export function CheckoutButton({
       size={size}
       className={className}
       onClick={() => {
-        // Replace current history entry so Back skips plans/pricing.
         window.location.replace(href);
       }}
     >

@@ -1,5 +1,4 @@
 import { PaddlePaymentService } from "./services/paddle";
-import { PolarPaymentService } from "./services/polar";
 import { StripePaymentService } from "./services/stripe";
 import {
   getDefaultPaymentProvider,
@@ -11,13 +10,11 @@ export function getPaymentService(
   provider: PaymentProvider = getDefaultPaymentProvider(),
 ): PaymentService {
   switch (provider) {
-    case "stripe":
-      return new StripePaymentService();
     case "paddle":
       return new PaddlePaymentService();
-    case "polar":
+    case "stripe":
     default:
-      return new PolarPaymentService();
+      return new StripePaymentService();
   }
 }
 

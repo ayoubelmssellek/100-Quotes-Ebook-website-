@@ -1,7 +1,6 @@
 /**
- * Lightweight paid-checkout registry.
- * Webhooks mark checkouts as paid; download route checks this + Polar API.
- * For multi-instance production, replace with Redis/DB.
+ * Lightweight paid-checkout registry for future payment webhooks.
+ * Replace with Redis/DB for multi-instance production.
  */
 
 export type PaidCheckoutRecord = {

@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { CheckoutButton } from "@/components/shared/checkout-button";
+import { getExternalCheckoutUrl } from "@/features/payments";
 import { formatPrice } from "@/lib/utils";
 import type { BookProduct } from "@/types/product";
 
@@ -8,15 +9,8 @@ type PricingSectionProps = {
 };
 
 export function PricingSection({ book }: PricingSectionProps) {
-  const polarProductId =
-    process.env.POLAR_PRODUCT_ID || process.env.NEXT_PUBLIC_POLAR_PRODUCT_ID;
-  const checkoutConfigured = Boolean(
-    process.env.POLAR_ACCESS_TOKEN && polarProductId,
-  );
-
-  const checkoutHref = polarProductId
-    ? `/api/checkout?products=${encodeURIComponent(polarProductId)}`
-    : "/contact";
+  const checkoutUrl = getExternalCheckoutUrl();
+  const checkoutHref = checkoutUrl || "/contact";
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[var(--surface)] py-16 md:py-24">
@@ -74,12 +68,11 @@ export function PricingSection({ book }: PricingSectionProps) {
             </ul>
 
             <CheckoutButton href={checkoutHref} size="lg" className="mt-8 w-full">
-              {checkoutConfigured ? "Buy Now" : "Contact Support to Buy"}
+              {checkoutUrl ? "Buy Now" : "Contact Support to Buy"}
             </CheckoutButton>
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
-              Secure checkout powered by Polar. Payment secrets never touch the
-              browser.
+              Secure checkout. Payment is handled by our payment provider.
             </p>
           </article>
         </div>

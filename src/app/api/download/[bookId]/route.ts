@@ -2,11 +2,7 @@ import { createReadStream, existsSync, statSync } from "fs";
 import path from "path";
 import { Readable } from "stream";
 import { NextRequest, NextResponse } from "next/server";
-import {
-  isCheckoutMarkedPaid,
-  markCheckoutPaid,
-} from "@/features/payments/orders";
-import { verifyPolarCheckout } from "@/features/payments/polar-verify";
+import { isCheckoutMarkedPaid } from "@/features/payments/orders";
 import { getClientIp, rateLimit } from "@/lib/security/rate-limit";
 
 const ALLOWED_FILES: Record<string, string> = {
@@ -37,34 +33,22 @@ export async function GET(
   const checkoutId =
     request.nextUrl.searchParams.get("checkout_id") ||
     request.nextUrl.searchParams.get("session_id");
+  const accessToken = request.nextUrl.searchParams.get("token");
+  const expectedToken = process.env.DOWNLOAD_ACCESS_TOKEN;
   const isDemo =
     process.env.NODE_ENV !== "production" &&
     request.nextUrl.searchParams.get("demo") === "1";
 
-  if (!checkoutId && !isDemo) {
+  const tokenOk = Boolean(
+    expectedToken && accessToken && accessToken === expectedToken,
+  );
+  const paidOk = Boolean(checkoutId && isCheckoutMarkedPaid(checkoutId));
+
+  if (!isDemo && !tokenOk && !paidOk) {
     return NextResponse.json(
-      { error: "Authorized purchase session required." },
+      { error: "Authorized purchase required." },
       { status: 401 },
     );
-  }
-
-  if (checkoutId && !isDemo) {
-    let authorized = isCheckoutMarkedPaid(checkoutId);
-
-    if (!authorized && process.env.POLAR_ACCESS_TOKEN) {
-      const verified = await verifyPolarCheckout(checkoutId);
-      if (verified.valid) {
-        markCheckoutPaid(checkoutId, { email: verified.email ?? undefined });
-        authorized = true;
-      }
-    }
-
-    if (!authorized) {
-      return NextResponse.json(
-        { error: "Purchase not verified yet. Please wait a moment and try again." },
-        { status: 403 },
-      );
-    }
   }
 
   const filePath = path.join(process.cwd(), "content", "books", fileName);

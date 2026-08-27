@@ -105,7 +105,8 @@ export async function startCheckout(formData: FormData): Promise<void> {
   const parsed = checkoutSchema.safeParse({
     productId: formData.get("productId"),
     slug: formData.get("slug"),
-    provider: formData.get("provider") || process.env.PAYMENT_PROVIDER || "polar",
+    provider:
+      formData.get("provider") || process.env.PAYMENT_PROVIDER || "external",
     email: formData.get("email") || undefined,
   });
 
@@ -118,16 +119,24 @@ export async function startCheckout(formData: FormData): Promise<void> {
     throw new Error("Product not found.");
   }
 
+  const externalUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim();
+  if (parsed.data.provider === "external" || !parsed.data.provider) {
+    if (externalUrl) {
+      redirect(externalUrl);
+    }
+    if (process.env.NODE_ENV === "development") {
+      redirect(`/books/${book.slug}/success?demo=1`);
+    }
+    throw new Error("Checkout URL is not configured.");
+  }
+
   const provider = parsed.data.provider as PaymentProvider;
   const paymentService = getPaymentService(provider);
 
   const providerProductId =
-    provider === "stripe"
-      ? process.env.STRIPE_PRICE_ID || process.env.NEXT_PUBLIC_STRIPE_PRICE_ID
-      : provider === "paddle"
-        ? process.env.PADDLE_PRICE_ID || process.env.NEXT_PUBLIC_PADDLE_PRICE_ID
-        : process.env.POLAR_PRODUCT_ID ||
-          process.env.NEXT_PUBLIC_POLAR_PRODUCT_ID;
+    provider === "paddle"
+      ? process.env.PADDLE_PRICE_ID || process.env.NEXT_PUBLIC_PADDLE_PRICE_ID
+      : process.env.STRIPE_PRICE_ID || process.env.NEXT_PUBLIC_STRIPE_PRICE_ID;
 
   try {
     const session = await paymentService.createCheckoutSession({
@@ -136,7 +145,9 @@ export async function startCheckout(formData: FormData): Promise<void> {
       price: book.pricing.price,
       currency: book.pricing.currency,
       title: book.title,
-      successUrl: absoluteUrl(`/books/${book.slug}/success?session_id={CHECKOUT_SESSION_ID}`),
+      successUrl: absoluteUrl(
+        `/books/${book.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
+      ),
       cancelUrl: absoluteUrl(`/books/${book.slug}#pricing`),
       customerEmail: parsed.data.email,
       providerProductId,

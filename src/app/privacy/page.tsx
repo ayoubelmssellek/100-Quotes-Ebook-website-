@@ -28,8 +28,8 @@ export default function PrivacyPage() {
         <ul className="list-disc space-y-2 pl-5">
           <li>Contact details you submit via forms (name, email, message).</li>
           <li>
-            Purchase-related details processed by our payment providers (Polar,
-            Stripe, or Paddle), such as email and transaction identifiers.
+            Purchase-related details processed by our payment provider, such as
+            email and transaction identifiers.
           </li>
           <li>
             Basic technical data such as IP address, browser type, and pages
