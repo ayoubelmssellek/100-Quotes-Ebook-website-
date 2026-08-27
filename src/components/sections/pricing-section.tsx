@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import { CheckoutButton } from "@/components/shared/checkout-button";
-import { Button } from "@/components/ui/button";
 import { getProductCheckoutUrl } from "@/features/payments";
 import { formatPrice } from "@/lib/utils";
 import type { DigitalProduct } from "@/types/product";
@@ -17,6 +16,10 @@ export function PricingSection({ book }: PricingSectionProps) {
     book.type === "ebook"
       ? "One e-book. Lifetime access."
       : "One download. Lifetime access.";
+
+  const payHref = isComingSoon
+    ? "/contact"
+    : checkoutUrl || "#pricing";
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[var(--surface-soft)] py-16 md:py-24">
@@ -36,8 +39,8 @@ export function PricingSection({ book }: PricingSectionProps) {
         </div>
 
         <div className="mx-auto mt-12 max-w-md">
-          <article className="rounded-xl border-2 border-[var(--brand-green)] bg-[var(--canvas)] p-8 shadow-[rgba(0,212,164,0.08)_0px_8px_24px]">
-            <span className="inline-flex rounded-full bg-[var(--brand-green)] px-2.5 py-1 text-[13px] font-semibold text-[var(--primary)]">
+          <article className="rounded-xl border border-[var(--hairline)] bg-[var(--canvas)] p-8 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+            <span className="inline-flex rounded-full bg-[var(--primary)] px-2.5 py-1 text-[13px] font-semibold text-white">
               {isComingSoon ? "Coming Soon" : "Digital Download"}
             </span>
             <h3 className="mt-5 text-[22px] font-semibold leading-snug text-[var(--ink)]">
@@ -75,29 +78,21 @@ export function PricingSection({ book }: PricingSectionProps) {
               ))}
             </ul>
 
-            {isComingSoon ? (
-              <CheckoutButton href="/contact" size="lg" className="mt-8 w-full">
-                Notify Me
-              </CheckoutButton>
-            ) : checkoutUrl ? (
-              <CheckoutButton
-                href={checkoutUrl}
-                variant="accent"
-                size="lg"
-                className="mt-8 w-full"
-              >
-                Pay now
-              </CheckoutButton>
-            ) : (
-              <Button variant="accent" size="lg" className="mt-8 w-full" disabled>
-                Pay now
-              </Button>
-            )}
+            <CheckoutButton
+              href={payHref}
+              variant="primary"
+              size="lg"
+              className="mt-8 w-full"
+            >
+              {isComingSoon ? "Notify Me" : "Pay now"}
+            </CheckoutButton>
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
-              {checkoutUrl
-                ? "Secure Whop checkout. After you pay, Whop delivers your files."
-                : "Checkout link will open as soon as it is connected in env."}
+              {isComingSoon
+                ? "We’ll let you know when this product launches."
+                : checkoutUrl
+                  ? "Secure Whop checkout. After you pay, Whop delivers your files."
+                  : "Add this product’s Whop checkout URL in .env to activate Pay now."}
             </p>
           </article>
         </div>

@@ -59,22 +59,17 @@ export function HeroSection({ book }: HeroSectionProps) {
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
             {isComingSoon ? (
-              <Button asChild variant="accent" size="lg">
+              <Button asChild variant="primary" size="lg">
                 <Link href="/contact">Get notified</Link>
               </Button>
-            ) : checkoutUrl ? (
+            ) : (
               <CheckoutButton
-                href={checkoutUrl}
-                variant="accent"
+                href={checkoutUrl || "#pricing"}
+                variant="primary"
                 size="lg"
-                className="bg-[var(--brand-green)] text-[var(--primary)] hover:bg-[var(--brand-green-deep)]"
               >
                 Pay now
               </CheckoutButton>
-            ) : (
-              <Button variant="accent" size="lg" disabled>
-                Pay now
-              </Button>
             )}
             <Button asChild variant="secondary" size="lg">
               <Link href={previewHref}>
@@ -84,17 +79,19 @@ export function HeroSection({ book }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[380px] animate-fade-up [animation-delay:120ms] lg:mr-0 lg:max-w-none">
-          <div className="overflow-hidden rounded-xl border border-black/5 bg-white/70 p-4 shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:p-5">
-            <Image
-              src={book.coverImage}
-              alt={`Cover of ${book.title}`}
-              width={900}
-              height={1200}
-              priority
-              className="mx-auto h-auto max-h-[420px] w-full object-contain"
-              sizes="(max-width: 768px) 90vw, 380px"
-            />
+        <div className="relative mx-auto w-full max-w-[560px] animate-fade-up [animation-delay:120ms] lg:max-w-none">
+          <div className="rounded-xl border border-black/5 bg-white/80 p-3 shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:p-4">
+            <div className="relative flex min-h-[200px] w-full items-center justify-center overflow-visible rounded-lg bg-[var(--surface)]">
+              <Image
+                src={book.coverImage}
+                alt={`Cover of ${book.title}`}
+                width={1200}
+                height={900}
+                priority
+                className="h-auto max-h-[min(70vh,520px)] w-full object-contain"
+                sizes="(max-width: 768px) 92vw, 520px"
+              />
+            </div>
           </div>
         </div>
       </div>
