@@ -12,18 +12,18 @@ export function StoreHome({ products }: StoreHomeProps) {
     <>
       <StoreHero />
       <ProductGrid products={products} />
-      <section className="border-t border-[var(--hairline)] bg-[var(--canvas)] py-16 md:py-24">
-        <div className="mx-auto max-w-[720px] px-6 text-center lg:px-8">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[1.4px] text-[var(--steel)]">
+      <section className="border-t border-[var(--hairline)] bg-[var(--surface)] py-14 md:py-20">
+        <div className="mx-auto max-w-[640px] px-6 text-center lg:px-8">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.5px] text-[var(--steel)]">
             About the store
           </p>
-          <h2 className="text-balance text-[32px] font-semibold leading-tight tracking-[-0.5px] text-[var(--ink)] md:text-[40px]">
+          <h2 className="text-balance text-[28px] font-semibold leading-tight tracking-[-0.5px] text-[var(--ink)] md:text-[36px]">
             Digital products for learning, inspiration & creativity
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
-            Mind & Heart Hub offers premium e-books and digital downloads —
-            from motivational reading to kids science stories and creative
-            packs. Checkout is handled securely on Whop with instant access.
+          <p className="mt-4 text-base leading-relaxed text-[var(--slate)] md:text-lg">
+            Mind & Heart Hub offers e-books and digital downloads — from
+            motivational reading to kids science stories and creative packs.
+            Checkout is secured on Whop with instant access after payment.
           </p>
         </div>
       </section>

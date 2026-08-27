@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { CheckoutButton } from "@/components/shared/checkout-button";
+import { Button } from "@/components/ui/button";
 import { getProductCheckoutUrl } from "@/features/payments";
 import { formatPrice } from "@/lib/utils";
 import type { DigitalProduct } from "@/types/product";
@@ -11,9 +12,6 @@ type PricingSectionProps = {
 export function PricingSection({ book }: PricingSectionProps) {
   const isComingSoon = book.status === "coming_soon";
   const checkoutUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
-  const checkoutHref = isComingSoon
-    ? "/contact"
-    : checkoutUrl || "/contact";
 
   const productLabel =
     book.type === "ebook"
@@ -21,10 +19,10 @@ export function PricingSection({ book }: PricingSectionProps) {
       : "One download. Lifetime access.";
 
   return (
-    <section id="pricing" className="scroll-mt-24 bg-[var(--surface)] py-16 md:py-24">
+    <section id="pricing" className="scroll-mt-24 bg-[var(--surface-soft)] py-16 md:py-24">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[1px] text-[var(--steel)]">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.5px] text-[var(--steel)]">
             Pricing
           </p>
           <h2 className="text-balance text-[36px] font-semibold leading-tight tracking-[-0.5px] text-[var(--ink)] md:text-[48px]">
@@ -32,14 +30,14 @@ export function PricingSection({ book }: PricingSectionProps) {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
             {isComingSoon
-              ? "This product is not for sale yet. Contact support to get notified at launch."
-              : "Secure checkout on Whop. Instant file access after payment — no subscription."}
+              ? "This product is not for sale yet."
+              : "Pay securely on Whop. Instant file access after checkout."}
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-md">
-          <article className="rounded-lg border-2 border-[var(--primary)] bg-[var(--surface)] p-8 shadow-[rgba(15,15,15,0.08)_0px_4px_12px_0px]">
-            <span className="inline-flex rounded-full bg-[var(--primary)] px-2.5 py-1 text-[13px] font-semibold text-white">
+          <article className="rounded-xl border-2 border-[var(--brand-green)] bg-[var(--canvas)] p-8 shadow-[rgba(0,212,164,0.08)_0px_8px_24px]">
+            <span className="inline-flex rounded-full bg-[var(--brand-green)] px-2.5 py-1 text-[13px] font-semibold text-[var(--primary)]">
               {isComingSoon ? "Coming Soon" : "Digital Download"}
             </span>
             <h3 className="mt-5 text-[22px] font-semibold leading-snug text-[var(--ink)]">
@@ -69,7 +67,7 @@ export function PricingSection({ book }: PricingSectionProps) {
                   className="flex items-start gap-3 text-base text-[var(--charcoal)]"
                 >
                   <Check
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--semantic-success)]"
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-green)]"
                     aria-hidden
                   />
                   <span>{feature}</span>
@@ -77,16 +75,29 @@ export function PricingSection({ book }: PricingSectionProps) {
               ))}
             </ul>
 
-            <CheckoutButton href={checkoutHref} size="lg" className="mt-8 w-full">
-              {isComingSoon
-                ? "Notify Me"
-                : checkoutUrl
-                  ? "Buy Now"
-                  : "Contact Support to Buy"}
-            </CheckoutButton>
+            {isComingSoon ? (
+              <CheckoutButton href="/contact" size="lg" className="mt-8 w-full">
+                Notify Me
+              </CheckoutButton>
+            ) : checkoutUrl ? (
+              <CheckoutButton
+                href={checkoutUrl}
+                variant="accent"
+                size="lg"
+                className="mt-8 w-full"
+              >
+                Pay now
+              </CheckoutButton>
+            ) : (
+              <Button variant="accent" size="lg" className="mt-8 w-full" disabled>
+                Pay now
+              </Button>
+            )}
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
-              Secure Whop checkout. After you pay, Whop delivers your files.
+              {checkoutUrl
+                ? "Secure Whop checkout. After you pay, Whop delivers your files."
+                : "Checkout link will open as soon as it is connected in env."}
             </p>
           </article>
         </div>

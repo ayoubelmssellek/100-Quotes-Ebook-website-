@@ -6,11 +6,11 @@ const footerColumns = [
     title: "Store",
     links: [
       { href: "/#shop", label: "All Products" },
-      { href: "/books/kids-stories-pack-10", label: "Kids Stories (10 Pack)" },
+      { href: "/books/kids-stories-pack-10", label: "Kids Stories" },
       { href: "/books/everyday-motivation", label: "Everyday Motivation" },
       {
         href: "/books/100-inspirational-quotes-for-self-improvement",
-        label: "100 Quotes E-book",
+        label: "100 Quotes",
       },
     ],
   },
@@ -34,21 +34,21 @@ const footerColumns = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--hairline)] bg-[var(--canvas)]">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        <div className="space-y-4">
+      <div className="mx-auto grid max-w-[1120px] gap-10 px-6 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div className="space-y-3">
           <p className="text-[15px] font-semibold text-[var(--ink)]">
             Mind & Heart Hub
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--steel)]">
-            Digital products store — e-books, kids stories, clipart, and
-            creative templates for instant download.
+            Premium digital products — e-books, kids stories, and creative
+            downloads with instant Whop delivery.
           </p>
           <p className="text-sm text-[var(--stone)]">@mind_and_heart_hub</p>
           <p className="text-sm text-[var(--steel)]">
             Support:{" "}
             <a
               href={SUPPORT_MAILTO}
-              className="font-medium text-[var(--link-blue)] hover:underline"
+              className="font-medium text-[var(--ink)] underline-offset-2 hover:underline"
             >
               {SUPPORT_EMAIL}
             </a>
@@ -57,7 +57,7 @@ export function SiteFooter() {
 
         {footerColumns.map((column) => (
           <div key={column.title}>
-            <p className="mb-4 text-sm font-semibold text-[var(--charcoal)]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.5px] text-[var(--steel)]">
               {column.title}
             </p>
             <ul className="space-y-2">
@@ -77,9 +77,9 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-[var(--hairline)]">
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-2 px-6 py-6 text-sm text-[var(--steel)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-[1120px] flex-col gap-2 px-6 py-5 text-sm text-[var(--steel)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Mind & Heart Hub. All rights reserved.</p>
-          <p>Secure checkout · Instant download · Lifetime access</p>
+          <p>Secure Whop checkout · Instant access</p>
         </div>
       </div>
     </footer>

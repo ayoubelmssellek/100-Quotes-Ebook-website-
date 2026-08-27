@@ -11,8 +11,8 @@ const navLinks = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--hairline)] bg-[var(--canvas)]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-[var(--hairline)] bg-[var(--canvas)]/85 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between px-6 lg:px-8">
         <Link
           href="/"
           className="text-[15px] font-semibold tracking-tight text-[var(--ink)]"
@@ -20,7 +20,7 @@ export function SiteHeader() {
           Mind & Heart Hub
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <Link
               key={`${link.href}-${link.label}`}
@@ -33,16 +33,16 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="/#shop">Shop Now</Link>
+          <Button asChild size="sm" variant="primary" className="hidden sm:inline-flex">
+            <Link href="/#shop">Shop</Link>
           </Button>
           <details className="relative md:hidden">
-            <summary className="flex h-10 w-10 list-none items-center justify-center rounded-md border border-[var(--hairline)] text-[var(--ink)] [&::-webkit-details-marker]:hidden">
-              <Menu className="h-5 w-5" aria-hidden />
+            <summary className="flex h-9 w-9 list-none items-center justify-center rounded-full border border-[var(--hairline)] text-[var(--ink)] [&::-webkit-details-marker]:hidden">
+              <Menu className="h-4 w-4" aria-hidden />
               <span className="sr-only">Open menu</span>
             </summary>
-            <div className="absolute right-0 mt-2 w-56 rounded-lg border border-[var(--hairline)] bg-[var(--canvas)] p-3 shadow-[rgba(15,15,15,0.08)_0px_4px_12px_0px]">
-              <nav className="flex flex-col gap-1" aria-label="Mobile">
+            <div className="absolute right-0 mt-2 w-52 rounded-xl border border-[var(--hairline)] bg-[var(--canvas)] p-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+              <nav className="flex flex-col gap-0.5" aria-label="Mobile">
                 {navLinks.map((link) => (
                   <Link
                     key={`${link.href}-${link.label}`}
@@ -52,8 +52,8 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-2 w-full">
-                  <Link href="/#shop">Shop Now</Link>
+                <Button asChild className="mt-2 w-full" size="sm">
+                  <Link href="/#shop">Shop</Link>
                 </Button>
               </nav>
             </div>

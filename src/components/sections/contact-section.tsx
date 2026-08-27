@@ -18,7 +18,7 @@ export function ContactSection() {
         </p>
 
         <div className="mt-10 rounded-lg border border-[var(--hairline)] bg-[var(--surface)] p-8 text-left md:p-10">
-          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[var(--card-tint-lavender)] text-[var(--brand-purple-800)]">
+          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--card-tint-mint)] text-[var(--brand-green-deep)]">
             <Mail className="h-5 w-5" aria-hidden />
           </div>
           <p className="text-sm font-semibold uppercase tracking-[0.5px] text-[var(--steel)]">

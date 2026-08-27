@@ -1,55 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #5645d4;
-  --primary-pressed: #4534b3;
-  --primary-deep: #3a2a99;
+  /* Mintlify-inspired tokens from DESIGN.md */
+  --primary: #0a0a0a;
+  --primary-pressed: #1c1c1e;
+  --primary-deep: #000000;
   --on-primary: #ffffff;
-  --brand-navy: #0a1530;
-  --brand-navy-deep: #070f24;
-  --brand-navy-mid: #1a2a52;
-  --link-blue: #0075de;
-  --link-blue-pressed: #005bab;
-  --brand-orange: #dd5b00;
-  --brand-orange-deep: #793400;
-  --brand-pink: #ff64c8;
-  --brand-pink-deep: #a02e6d;
-  --brand-purple: #7b3ff2;
-  --brand-purple-300: #d6b6f6;
-  --brand-purple-800: #391c57;
-  --brand-teal: #2a9d99;
-  --brand-green: #1aae39;
-  --brand-yellow: #f5d75e;
-  --brand-brown: #523410;
-  --card-tint-peach: #ffe8d4;
-  --card-tint-rose: #fde0ec;
-  --card-tint-mint: #d9f3e1;
-  --card-tint-lavender: #e6e0f5;
-  --card-tint-sky: #dcecfa;
-  --card-tint-yellow: #fef7d6;
-  --card-tint-yellow-bold: #f9e79f;
-  --card-tint-cream: #f8f5e8;
-  --card-tint-gray: #f0eeec;
+  --brand-green: #00d4a4;
+  --brand-green-deep: #00b48a;
+  --brand-green-soft: #7cebcb;
+  --brand-tag: #3772cf;
+  --brand-warn: #c37d0d;
+  --brand-error: #d45656;
+  --hero-sky-from: #87a8c8;
+  --hero-sky-to: #f5e9d8;
+  --hero-dark-from: #1a3d4a;
+  --hero-dark-to: #2d5a4f;
+  --testimonial-orange: #f55a3c;
   --canvas: #ffffff;
-  --surface: #f6f5f4;
-  --surface-soft: #fafaf9;
-  --hairline: #e5e3df;
-  --hairline-soft: #ede9e4;
-  --hairline-strong: #c8c4be;
+  --canvas-dark: #0a0a0a;
+  --surface: #f7f7f7;
+  --surface-soft: #fafafa;
+  --surface-code: #1c1c1e;
+  --hairline: #e5e5e5;
+  --hairline-soft: #ededed;
+  --hairline-strong: #d4d4d4;
+  --hairline-dark: #1f1f1f;
+  --ink: #0a0a0a;
   --ink-deep: #000000;
-  --ink: #1a1a1a;
-  --charcoal: #37352f;
-  --slate: #5d5b54;
-  --steel: #787671;
-  --stone: #a4a097;
-  --muted: #bbb8b1;
+  --charcoal: #1c1c1e;
+  --slate: #3a3a3c;
+  --steel: #5a5a5c;
+  --stone: #888888;
+  --muted: #a8a8aa;
   --on-dark: #ffffff;
-  --on-dark-muted: #a4a097;
-  --semantic-success: #1aae39;
-  --semantic-warning: #dd5b00;
-  --semantic-error: #e03131;
+  --on-dark-muted: #b3b3b3;
+  --link-blue: #3772cf;
+  --link-blue-pressed: #2a5aa3;
+  --semantic-success: #00d4a4;
+  --semantic-warning: #c37d0d;
+  --semantic-error: #d45656;
+
+  /* Legacy aliases used by older sections */
+  --brand-navy: #1a3d4a;
+  --brand-navy-deep: #122e38;
+  --brand-navy-mid: #2d5a4f;
+  --brand-orange: #f55a3c;
+  --brand-orange-deep: #cc3a1f;
+  --brand-pink: #7cebcb;
+  --brand-pink-deep: #00b48a;
+  --brand-purple: #3772cf;
+  --brand-purple-300: #a8c4ef;
+  --brand-purple-800: #1e3f73;
+  --brand-teal: #00d4a4;
+  --brand-yellow: #f5e9d8;
+  --brand-brown: #3a3a3c;
+  --card-tint-peach: #fff1e8;
+  --card-tint-rose: #ffe8ef;
+  --card-tint-mint: #e6fbf5;
+  --card-tint-lavender: #eef2ff;
+  --card-tint-sky: #eaf2f8;
+  --card-tint-yellow: #fbf6eb;
+  --card-tint-yellow-bold: #f5e9d8;
+  --card-tint-cream: #faf7f2;
+  --card-tint-gray: #f0f0f0;
+
   --background: var(--canvas);
   --foreground: var(--ink);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
 }
 
 @theme inline {
@@ -72,7 +93,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--primary) 22%, white);
+  background: color-mix(in srgb, var(--brand-green) 28%, white);
 }
 
 @keyframes accordion-down {
