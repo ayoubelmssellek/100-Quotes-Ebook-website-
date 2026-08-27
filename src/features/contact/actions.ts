@@ -4,7 +4,7 @@ import DOMPurify from "isomorphic-dompurify";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { getBookBySlug } from "@/features/books/data/books";
-import { getPaymentService } from "@/features/payments";
+import { getPaymentService, getProductCheckoutUrl } from "@/features/payments";
 import type { PaymentProvider } from "@/features/payments";
 import { assertSameOrigin } from "@/lib/security/csrf";
 import { getClientIp, rateLimit } from "@/lib/security/rate-limit";
@@ -119,7 +119,7 @@ export async function startCheckout(formData: FormData): Promise<void> {
     throw new Error("Product not found.");
   }
 
-  const externalUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim();
+  const externalUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
   if (parsed.data.provider === "external" || !parsed.data.provider) {
     if (externalUrl) {
       redirect(externalUrl);

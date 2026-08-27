@@ -1,16 +1,24 @@
 import { Check } from "lucide-react";
 import { CheckoutButton } from "@/components/shared/checkout-button";
-import { getExternalCheckoutUrl } from "@/features/payments";
+import { getProductCheckoutUrl } from "@/features/payments";
 import { formatPrice } from "@/lib/utils";
-import type { BookProduct } from "@/types/product";
+import type { DigitalProduct } from "@/types/product";
 
 type PricingSectionProps = {
-  book: BookProduct;
+  book: DigitalProduct;
 };
 
 export function PricingSection({ book }: PricingSectionProps) {
-  const checkoutUrl = getExternalCheckoutUrl();
-  const checkoutHref = checkoutUrl || "/contact";
+  const isComingSoon = book.status === "coming_soon";
+  const checkoutUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
+  const checkoutHref = isComingSoon
+    ? "/contact"
+    : checkoutUrl || "/contact";
+
+  const productLabel =
+    book.type === "ebook"
+      ? "One e-book. Lifetime access."
+      : "One download. Lifetime access.";
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[var(--surface)] py-16 md:py-24">
@@ -20,17 +28,19 @@ export function PricingSection({ book }: PricingSectionProps) {
             Pricing
           </p>
           <h2 className="text-balance text-[36px] font-semibold leading-tight tracking-[-0.5px] text-[var(--ink)] md:text-[48px]">
-            One book. Lifetime access.
+            {isComingSoon ? "Coming soon" : productLabel}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
-            Instant download after checkout. No subscription required.
+            {isComingSoon
+              ? "This product is not for sale yet. Contact support to get notified at launch."
+              : "Instant download after checkout. No subscription required."}
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-md">
           <article className="rounded-lg border-2 border-[var(--primary)] bg-[var(--surface)] p-8 shadow-[rgba(15,15,15,0.08)_0px_4px_12px_0px]">
             <span className="inline-flex rounded-full bg-[var(--primary)] px-2.5 py-1 text-[13px] font-semibold text-white">
-              Most Popular
+              {isComingSoon ? "Coming Soon" : "Digital Download"}
             </span>
             <h3 className="mt-5 text-[22px] font-semibold leading-snug text-[var(--ink)]">
               {book.title}
@@ -49,7 +59,7 @@ export function PricingSection({ book }: PricingSectionProps) {
               ) : null}
             </div>
             <p className="mt-2 text-sm text-[var(--steel)]">
-              One-time payment · Instant PDF delivery
+              One-time payment · Instant delivery
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -68,7 +78,11 @@ export function PricingSection({ book }: PricingSectionProps) {
             </ul>
 
             <CheckoutButton href={checkoutHref} size="lg" className="mt-8 w-full">
-              {checkoutUrl ? "Buy Now" : "Contact Support to Buy"}
+              {isComingSoon
+                ? "Notify Me"
+                : checkoutUrl
+                  ? "Buy Now"
+                  : "Contact Support to Buy"}
             </CheckoutButton>
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getBookBySlug } from "@/features/books/data/books";
+import { kidsStories } from "@/features/products/data/kids-stories";
 
 type SuccessPageProps = {
   params: Promise<{ slug: string }>;
@@ -10,6 +11,18 @@ type SuccessPageProps = {
     session_id?: string;
     checkout_id?: string;
   }>;
+};
+
+const DOWNLOAD_LABELS: Record<string, string> = {
+  "100-inspirational-quotes-part-1": "Download E-book PDF",
+  "everyday-motivation": "Download Everyday Motivation PDF",
+  "kids-canva-links": "Download Canva Links PDF",
+  ...Object.fromEntries(
+    kidsStories.map((s) => [
+      s.downloadId,
+      `Download: ${s.title}`,
+    ]),
+  ),
 };
 
 export default async function CheckoutSuccessPage({
@@ -33,8 +46,18 @@ export default async function CheckoutSuccessPage({
     downloadParams.set("checkout_id", checkoutId);
   }
 
-  const canDownload = isDemo || Boolean(downloadToken);
-  const downloadHref = `/api/download/100-inspirational-quotes-part-1?${downloadParams.toString()}`;
+  const downloadIds =
+    book?.downloadIds ??
+    (slug === "100-inspirational-quotes-for-self-improvement"
+      ? ["100-inspirational-quotes-part-1"]
+      : slug === "everyday-motivation"
+        ? ["everyday-motivation"]
+        : []);
+
+  const canDownload =
+    downloadIds.length > 0 && (isDemo || Boolean(downloadToken));
+
+  const queryString = downloadParams.toString();
 
   return (
     <section className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center px-6 py-24 text-center">
@@ -48,20 +71,27 @@ export default async function CheckoutSuccessPage({
       <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
         {isDemo
           ? "Checkout is not fully connected yet. After you add your payment link, real purchases will land here."
-          : `Your copy of ${book?.title ?? "the e-book"} is ready. Download it below — a confirmation was also sent to your email.`}
+          : `Your copy of ${book?.title ?? "the product"} is ready. Download below — a confirmation was also sent to your email.`}
       </p>
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <div className="mt-8 flex w-full max-w-md flex-col gap-3">
         {canDownload ? (
-          <Button asChild>
-            <a href={downloadHref}>Download E-book</a>
-          </Button>
+          downloadIds.map((id) => (
+            <Button key={id} asChild className="w-full">
+              <a href={`/api/download/${id}?${queryString}`}>
+                {DOWNLOAD_LABELS[id] ?? `Download ${id}`}
+              </a>
+            </Button>
+          ))
         ) : (
-          <Button asChild>
+          <Button asChild className="w-full">
             <Link href="/contact">Contact Support for Download</Link>
           </Button>
         )}
-        <Button asChild variant="secondary">
-          <Link href={`/books/${slug}`}>Back to book</Link>
+        <Button asChild variant="secondary" className="w-full">
+          <Link href={`/books/${slug}`}>Back to product</Link>
+        </Button>
+        <Button asChild variant="secondary" className="w-full">
+          <Link href="/#shop">Back to store</Link>
         </Button>
       </div>
     </section>

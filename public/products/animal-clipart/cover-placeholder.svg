@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" fill="none">
+  <rect width="900" height="1200" fill="#F5F5F5"/>
+  <rect x="60" y="60" width="780" height="1080" rx="24" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+  <ellipse cx="450" cy="400" rx="140" ry="100" fill="none" stroke="#212121" stroke-width="8"/>
+  <circle cx="400" cy="380" r="12" fill="#212121"/>
+  <circle cx="500" cy="380" r="12" fill="#212121"/>
+  <path d="M390 450 Q450 490 510 450" stroke="#212121" stroke-width="6" fill="none"/>
+  <text x="450" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#212121">Animal Clipart</text>
+  <text x="450" y="680" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#616161">Black &amp; White · Coming soon</text>
+</svg>

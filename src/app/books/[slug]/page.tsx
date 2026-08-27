@@ -57,7 +57,7 @@ export default async function BookPage({ params }: BookPageProps) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Book",
+    "@type": book.type === "ebook" ? "Book" : "Product",
     name: book.title,
     description: book.seo.description,
     image: absoluteUrl(book.coverImage),
@@ -65,11 +65,17 @@ export default async function BookPage({ params }: BookPageProps) {
       "@type": "Person",
       name: book.author,
     },
+    ...(book.type === "ebook" && book.pageCount
+      ? { numberOfPages: book.pageCount, bookFormat: "https://schema.org/EBook" }
+      : {}),
     offers: {
       "@type": "Offer",
       price: book.pricing.price.toFixed(2),
       priceCurrency: book.pricing.currency,
-      availability: "https://schema.org/InStock",
+      availability:
+        book.status === "available"
+          ? "https://schema.org/InStock"
+          : "https://schema.org/PreOrder",
       url: absoluteUrl(`/books/${book.slug}#pricing`),
     },
   };

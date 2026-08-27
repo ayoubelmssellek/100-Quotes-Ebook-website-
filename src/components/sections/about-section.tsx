@@ -1,15 +1,20 @@
 import {
   BookOpen,
   Compass,
+  FileText,
   Flame,
+  Heart,
+  Layers,
+  PenLine,
   Quote,
   Shield,
+  Sparkles,
   Sprout,
   Sun,
   Target,
   type LucideIcon,
 } from "lucide-react";
-import type { BookProduct } from "@/types/product";
+import type { DigitalProduct } from "@/types/product";
 
 const iconMap: Record<string, LucideIcon> = {
   quote: Quote,
@@ -20,6 +25,11 @@ const iconMap: Record<string, LucideIcon> = {
   sun: Sun,
   compass: Compass,
   "book-open": BookOpen,
+  heart: Heart,
+  layers: Layers,
+  pen: PenLine,
+  file: FileText,
+  sparkles: Sparkles,
 };
 
 const tintClasses: Record<string, string> = {
@@ -33,7 +43,7 @@ const tintClasses: Record<string, string> = {
 };
 
 type AboutSectionProps = {
-  book: BookProduct;
+  book: DigitalProduct;
 };
 
 export function AboutSection({ book }: AboutSectionProps) {
@@ -42,10 +52,10 @@ export function AboutSection({ book }: AboutSectionProps) {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[1px] text-[var(--steel)]">
-            About the Book
+            About
           </p>
           <h2 className="text-balance text-[36px] font-semibold leading-tight tracking-[-0.5px] text-[var(--ink)] md:text-[48px]">
-            Practical guidance for a better you
+            {book.subtitle}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
             {book.longDescription}

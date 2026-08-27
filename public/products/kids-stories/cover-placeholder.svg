@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" fill="none">
+  <rect width="900" height="1200" fill="#E8F5E9"/>
+  <rect x="60" y="60" width="780" height="1080" rx="24" fill="#FFFFFF" stroke="#C8E6C9" stroke-width="2"/>
+  <circle cx="450" cy="420" r="120" fill="#A5D6A7"/>
+  <text x="450" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#1B5E20">Kids Story Books</text>
+  <text x="450" y="680" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#558B2F">Coming soon</text>
+</svg>

@@ -1,8 +1,12 @@
-# Mind & Heart Hub — E-book Sales Website
+# Mind & Heart Hub — Digital Products Store
 
-Premium Next.js storefront for:
+Next.js storefront for e-books and digital downloads:
 
-**100 Inspirational Quotes for Self-Improvement – Part 1**
+- **100 Inspirational Quotes for Self-Improvement** — $12
+- **Everyday Motivation** — $12
+- Kids Story Books Collection — $19 (coming soon)
+- Black & White Animal Clipart — $15 (coming soon)
+- 50 Vintage Digital Templates — $27 (coming soon)
 
 ## Stack
 
@@ -19,21 +23,25 @@ cp .env.example .env.local
 npm run dev
 ```
 
+## Catalog
+
+Products live in `src/features/products/data/catalog.ts`. Add PDFs under `content/books/` and map them in `src/app/api/download/[bookId]/route.ts`.
+
 ## Payments
 
-Polar has been removed. Buy Now uses an external checkout URL:
+Buy Now uses external checkout URLs (Stripe Payment Link, Lemon Squeezy, Gumroad, etc.):
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://www.mindandhearthub.shop
-NEXT_PUBLIC_CHECKOUT_URL=https://your-payment-provider-checkout-link
+NEXT_PUBLIC_CHECKOUT_URL=https://fallback-checkout-link
+NEXT_PUBLIC_CHECKOUT_URL_QUOTES=
+NEXT_PUBLIC_CHECKOUT_URL_EVERYDAY=
 DOWNLOAD_ACCESS_TOKEN=long-random-secret
 ```
 
-Set your payment provider’s success redirect to:
+Set each product’s success redirect to:
 
-`https://www.mindandhearthub.shop/books/100-inspirational-quotes-for-self-improvement/success`
-
-Optional Stripe/Paddle adapters remain under `src/features/payments` for later API integration.
+`https://www.mindandhearthub.shop/books/<product-slug>/success`
 
 ## Scripts
 

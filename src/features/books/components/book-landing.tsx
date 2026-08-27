@@ -6,10 +6,10 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { PreviewSection } from "@/components/sections/preview-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import type { BookProduct } from "@/types/product";
+import type { DigitalProduct } from "@/types/product";
 
 type BookLandingProps = {
-  book: BookProduct;
+  book: DigitalProduct;
 };
 
 export function BookLanding({ book }: BookLandingProps) {
@@ -17,11 +17,13 @@ export function BookLanding({ book }: BookLandingProps) {
     <>
       <HeroSection book={book} />
       <AboutSection book={book} />
-      <BenefitsSection book={book} />
-      <PreviewSection book={book} />
-      <TestimonialsSection book={book} />
+      {book.benefits.length > 0 ? <BenefitsSection book={book} /> : null}
+      {book.previews.length > 0 ? <PreviewSection book={book} /> : null}
+      {book.testimonials.length > 0 ? (
+        <TestimonialsSection book={book} />
+      ) : null}
       <PricingSection book={book} />
-      <FaqSection book={book} />
+      {book.faqs.length > 0 ? <FaqSection book={book} /> : null}
       <ContactSection />
     </>
   );

@@ -1,35 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import type { BookProduct } from "@/types/product";
+import { getProductTypeLabel } from "@/features/products/data/catalog";
+import { formatPrice } from "@/lib/utils";
+import type { DigitalProduct } from "@/types/product";
 
 type HeroSectionProps = {
-  book: BookProduct;
+  book: DigitalProduct;
 };
 
 export function HeroSection({ book }: HeroSectionProps) {
+  const typeLabel = getProductTypeLabel(book.type);
+  const metaBits = [
+    typeLabel,
+    book.pageCount ? `${book.pageCount} pages` : null,
+    book.itemCount ? `${book.itemCount} items` : null,
+    formatPrice(book.pricing.price, book.pricing.currency),
+  ].filter(Boolean);
+
+  const previewHref = book.previews.length > 0 ? "#preview" : "#about";
+  const ctaLabel =
+    book.status === "coming_soon" ? "Get notified" : "Buy Now";
+  const ctaHref =
+    book.status === "coming_soon" ? "/contact" : "#pricing";
+
   return (
     <section className="relative overflow-hidden bg-[var(--brand-navy)] text-[var(--on-dark)]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-      >
+      <div aria-hidden className="pointer-events-none absolute inset-0">
         <span className="absolute left-[8%] top-[18%] h-3 w-3 rounded-sm bg-[var(--brand-pink)] opacity-80" />
         <span className="absolute left-[18%] top-[62%] h-2.5 w-2.5 rounded-sm bg-[var(--brand-yellow)] opacity-80" />
         <span className="absolute right-[14%] top-[22%] h-3 w-3 rounded-sm bg-[var(--brand-teal)] opacity-80" />
         <span className="absolute right-[22%] top-[58%] h-2.5 w-2.5 rounded-sm bg-[var(--brand-orange)] opacity-80" />
         <span className="absolute left-[42%] top-[12%] h-2 w-2 rounded-sm bg-[var(--primary)] opacity-70" />
-        <svg
-          className="absolute -right-8 top-10 h-48 w-48 opacity-20"
-          viewBox="0 0 200 200"
-          fill="none"
-        >
-          <path
-            d="M20 40C60 10 120 10 160 40M30 80C70 50 130 50 170 80M40 120C80 90 140 90 180 120"
-            stroke="white"
-            strokeWidth="1.5"
-          />
-        </svg>
       </div>
 
       <div className="relative mx-auto grid max-w-[1280px] gap-12 px-6 pb-8 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-0 lg:pt-[120px]">
@@ -38,7 +40,8 @@ export function HeroSection({ book }: HeroSectionProps) {
             Mind & Heart Hub
           </p>
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[1px] text-[var(--on-dark-muted)]">
-            Digital E-book · Part 1
+            {metaBits.join(" · ")}
+            {book.status === "coming_soon" ? " · Coming soon" : null}
           </p>
           <h1 className="text-balance text-[36px] font-semibold leading-[1.05] tracking-[-1.5px] sm:text-[48px] lg:text-[56px] xl:text-[64px]">
             {book.title}
@@ -51,15 +54,17 @@ export function HeroSection({ book }: HeroSectionProps) {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
             <Button asChild size="lg">
-              <Link href="/#pricing">Buy Now</Link>
+              <Link href={ctaHref}>{ctaLabel}</Link>
             </Button>
             <Button asChild variant="secondary-on-dark" size="lg">
-              <Link href="/#preview">Preview Book</Link>
+              <Link href={previewHref}>
+                {book.previews.length > 0 ? "Preview" : "Learn more"}
+              </Link>
             </Button>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[420px] lg:mr-0 lg:max-w-none animate-fade-up [animation-delay:120ms]">
+        <div className="relative mx-auto w-full max-w-[420px] animate-fade-up [animation-delay:120ms] lg:mr-0 lg:max-w-none">
           <div className="overflow-hidden rounded-lg border border-white/10 bg-[var(--canvas)] shadow-[rgba(15,15,15,0.20)_0px_24px_48px_-8px]">
             <Image
               src={book.coverImage}

@@ -14,19 +14,19 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl()),
   title: {
-    default:
-      "100 Inspirational Quotes for Self-Improvement | Digital E-book",
+    default: "Mind & Heart Hub | E-books & Digital Products Store",
     template: "%s | Mind & Heart Hub",
   },
   description:
-    "A motivational e-book featuring 100 inspirational quotes and practical guidance to help you build confidence, improve daily habits, and develop a positive mindset.",
+    "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
   keywords: [
-    "inspirational quotes",
-    "self-improvement e-book",
-    "motivation",
-    "confidence",
-    "personal growth",
-    "digital book",
+    "digital products",
+    "ebook store",
+    "kids story books",
+    "animal clipart",
+    "vintage templates",
+    "motivational ebooks",
+    "instant download",
   ],
   authors: [{ name: "Ayoub El Mssellek" }],
   creator: "Mind & Heart Hub",
@@ -35,26 +35,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: absoluteUrl(),
     siteName: "Mind & Heart Hub",
-    title:
-      "100 Inspirational Quotes for Self-Improvement | Digital E-book",
+    title: "Mind & Heart Hub | E-books & Digital Products Store",
     description:
-      "A motivational e-book featuring 100 inspirational quotes and practical guidance to help you build confidence, improve daily habits, and develop a positive mindset.",
+      "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
     images: [
       {
-        url: "/books/100-inspirational-quotes/cover.png",
+        url: "/books/everyday-motivation/cover.jpg",
         width: 900,
         height: 1200,
-        alt: "100 Inspirational Quotes for Self-Improvement book cover",
+        alt: "Everyday Motivation ebook cover",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "100 Inspirational Quotes for Self-Improvement | Digital E-book",
+    title: "Mind & Heart Hub | E-books & Digital Products Store",
     description:
-      "A motivational e-book featuring 100 inspirational quotes and practical guidance to help you build confidence, improve daily habits, and develop a positive mindset.",
-    images: ["/books/100-inspirational-quotes/cover.png"],
+      "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
+    images: ["/books/everyday-motivation/cover.jpg"],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],

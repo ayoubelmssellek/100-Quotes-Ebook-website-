@@ -1,4 +1,12 @@
-export type ProductFormat = "pdf" | "epub" | "mobi";
+export type ProductType =
+  | "ebook"
+  | "kids_book"
+  | "clipart"
+  | "template_pack";
+
+export type ProductStatus = "available" | "coming_soon";
+
+export type ProductFormat = "pdf" | "epub" | "png" | "svg" | "zip";
 
 export type ProductFeature = {
   title: string;
@@ -36,13 +44,16 @@ export type ProductPricing = {
   currency: string;
   compareAtPrice?: number;
   features: string[];
+  checkoutUrlEnv?: string;
   stripePriceId?: string;
   paddlePriceId?: string;
 };
 
-export type BookProduct = {
+export type DigitalProduct = {
   id: string;
   slug: string;
+  type: ProductType;
+  status: ProductStatus;
   title: string;
   subtitle: string;
   shortDescription: string;
@@ -51,7 +62,8 @@ export type BookProduct = {
   authorHandle?: string;
   coverImage: string;
   formats: ProductFormat[];
-  pageCount: number;
+  pageCount?: number;
+  itemCount?: number;
   language: string;
   category: string;
   tags: string[];
@@ -67,4 +79,11 @@ export type BookProduct = {
   };
   publishedAt: string;
   featured?: boolean;
+  /** API download key(s) under /api/download/[bookId] */
+  downloadIds?: string[];
+  /** For packs: related product slugs included */
+  bundleSlugs?: string[];
 };
+
+/** @deprecated Use DigitalProduct — kept for older book landing imports */
+export type BookProduct = DigitalProduct;

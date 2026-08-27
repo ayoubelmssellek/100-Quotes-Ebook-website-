@@ -3,19 +3,21 @@ import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 const footerColumns = [
   {
-    title: "Product",
+    title: "Store",
     links: [
-      { href: "/#about", label: "About the Book" },
-      { href: "/#preview", label: "Preview" },
-      { href: "/#pricing", label: "Pricing" },
-      { href: "/books/100-inspirational-quotes-for-self-improvement", label: "Book Page" },
+      { href: "/#shop", label: "All Products" },
+      { href: "/books/kids-stories-pack-10", label: "Kids Stories (10 Pack)" },
+      { href: "/books/everyday-motivation", label: "Everyday Motivation" },
+      {
+        href: "/books/100-inspirational-quotes-for-self-improvement",
+        label: "100 Quotes E-book",
+      },
     ],
   },
   {
     title: "Support",
     links: [
       { href: "/contact", label: "Contact" },
-      { href: "/#faq", label: "FAQ" },
       { href: "/refund", label: "Refund Policy" },
     ],
   },
@@ -38,8 +40,8 @@ export function SiteFooter() {
             Mind & Heart Hub
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--steel)]">
-            Premium digital guides for self-improvement, confidence, and daily
-            inspiration.
+            Digital products store — e-books, kids stories, clipart, and
+            creative templates for instant download.
           </p>
           <p className="text-sm text-[var(--stone)]">@mind_and_heart_hub</p>
           <p className="text-sm text-[var(--steel)]">

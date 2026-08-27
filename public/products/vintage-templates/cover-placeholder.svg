@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" fill="none">
+  <rect width="900" height="1200" fill="#EFEBE9"/>
+  <rect x="60" y="60" width="780" height="1080" rx="24" fill="#FFF8E1" stroke="#D7CCC8" stroke-width="2"/>
+  <rect x="200" y="280" width="500" height="280" rx="8" fill="#FFFDE7" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="240" y1="360" x2="660" y2="360" stroke="#A1887F" stroke-width="2"/>
+  <line x1="240" y1="420" x2="620" y2="420" stroke="#A1887F" stroke-width="2"/>
+  <line x1="240" y1="480" x2="580" y2="480" stroke="#A1887F" stroke-width="2"/>
+  <text x="450" y="680" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#4E342E">50 Vintage Templates</text>
+  <text x="450" y="740" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#795548">Coming soon</text>
+</svg>
