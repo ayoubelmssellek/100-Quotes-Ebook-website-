@@ -40,8 +40,8 @@ export function SiteFooter() {
             Mind & Heart Hub
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--steel)]">
-            Premium digital products — e-books, kids stories, and creative
-            downloads with instant Whop delivery.
+            Premium digital products — e-books and kids science stories with
+            instant Whop delivery.
           </p>
           <p className="text-sm text-[var(--stone)]">@mind_and_heart_hub</p>
           <p className="text-sm text-[var(--steel)]">

@@ -18,13 +18,12 @@ export const metadata: Metadata = {
     template: "%s | Mind & Heart Hub",
   },
   description:
-    "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
+    "Shop motivational e-books and kids science storybooks. Instant downloads from Mind & Heart Hub.",
   keywords: [
     "digital products",
     "ebook store",
     "kids story books",
-    "animal clipart",
-    "vintage templates",
+    "kids science stories",
     "motivational ebooks",
     "instant download",
   ],
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Mind & Heart Hub",
     title: "Mind & Heart Hub | E-books & Digital Products Store",
     description:
-      "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
+      "Shop motivational e-books and kids science storybooks. Instant downloads from Mind & Heart Hub.",
     images: [
       {
         url: "/books/everyday-motivation/cover.jpg",
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mind & Heart Hub | E-books & Digital Products Store",
     description:
-      "Shop e-books, kids story books, animal clipart, and vintage digital templates. Instant downloads from Mind & Heart Hub.",
+      "Shop motivational e-books and kids science storybooks. Instant downloads from Mind & Heart Hub.",
     images: ["/books/everyday-motivation/cover.jpg"],
   },
   icons: {

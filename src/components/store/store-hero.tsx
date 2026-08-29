@@ -35,7 +35,7 @@ export function StoreHero() {
           E-books, stories & creative downloads
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[var(--slate)]">
-          Motivation e-books, kids science stories, and creative packs —
+          Motivation e-books and kids science stories —
           pay once, get instant access on Whop.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

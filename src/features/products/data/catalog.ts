@@ -263,145 +263,12 @@ const coreProducts: DigitalProduct[] = [
     featured: true,
     downloadIds: ["everyday-motivation"],
   },
-  {
-    id: "animal_clipart_bw",
-    slug: "black-and-white-animal-clipart",
-    type: "clipart",
-    status: "coming_soon",
-    title: "Black & White Animal Clipart Pack",
-    subtitle: "Clean line-art animals for crafts and classrooms",
-    shortDescription:
-      "A versatile black-and-white animal clipart pack for worksheets, crafts, planners, and creative projects.",
-    longDescription:
-      "High-quality black and white animal illustrations designed for easy printing and digital use. Ideal for teachers, parents, designers, and crafters who need simple, elegant animal graphics.",
-    author: "Mind & Heart Hub",
-    coverImage: "/products/animal-clipart/cover-placeholder.svg",
-    formats: ["png", "zip"],
-    itemCount: 50,
-    language: "English",
-    category: "Clipart",
-    tags: ["clipart", "animals", "black-and-white", "printables"],
-    features: [
-      {
-        title: "Black & White Line Art",
-        description: "Clean animal illustrations that print beautifully.",
-        icon: "pen",
-        tint: "cream",
-      },
-      {
-        title: "Ready for Projects",
-        description: "Use in worksheets, stickers, planners, and crafts.",
-        icon: "sparkles",
-        tint: "lavender",
-      },
-      {
-        title: "Commercial-Friendly Pack",
-        description: "Clear usage terms provided with your download.",
-        icon: "shield",
-        tint: "mint",
-      },
-    ],
-    benefits: [],
-    previews: [],
-    testimonials: [],
-    faqs: [
-      {
-        question: "What file types will I get?",
-        answer:
-          "PNG (and ZIP pack). Exact asset list will be confirmed at launch.",
-      },
-    ],
-    pricing: {
-      price: 15,
-      currency: "USD",
-      features: [
-        "Black & white animal clipart",
-        "PNG files in a ZIP pack",
-        "Instant download on release",
-        "Lifetime access",
-      ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_CLIPART",
-    },
-    seo: {
-      title: "Black & White Animal Clipart Pack | Digital Download",
-      description:
-        "Clean black-and-white animal clipart for crafts, classrooms, and creative projects. Coming soon.",
-    },
-    publishedAt: "2026-09-15",
-  },
-  {
-    id: "vintage_templates_50",
-    slug: "50-vintage-digital-templates",
-    type: "template_pack",
-    status: "coming_soon",
-    title: "50 Vintage Digital Templates",
-    subtitle: "Timeless templates for journals, planners & creatives",
-    shortDescription:
-      "A curated pack of 50 vintage-inspired digital templates for journaling, planning, social posts, and printable projects.",
-    longDescription:
-      "Fifty ready-to-use vintage digital templates with classic textures and elegant layouts. Designed for creators who want a nostalgic look without designing from scratch.",
-    author: "Mind & Heart Hub",
-    coverImage: "/products/vintage-templates/cover-placeholder.svg",
-    formats: ["pdf", "png", "zip"],
-    itemCount: 50,
-    language: "English",
-    category: "Templates",
-    tags: ["templates", "vintage", "printables", "journal"],
-    features: [
-      {
-        title: "50 Ready Templates",
-        description: "A full pack of vintage-inspired layouts you can use immediately.",
-        icon: "layers",
-        tint: "peach",
-      },
-      {
-        title: "Print & Digital Use",
-        description: "Works for printable journals and on-screen creative work.",
-        icon: "file",
-        tint: "yellow",
-      },
-      {
-        title: "Timeless Aesthetic",
-        description: "Classic vintage styling that feels premium and versatile.",
-        icon: "sparkles",
-        tint: "cream",
-      },
-    ],
-    benefits: [],
-    previews: [],
-    testimonials: [],
-    faqs: [
-      {
-        question: "What is included?",
-        answer:
-          "50 vintage digital templates delivered as a downloadable pack. Final formats will be listed at launch.",
-      },
-    ],
-    pricing: {
-      price: 27,
-      currency: "USD",
-      features: [
-        "50 vintage digital templates",
-        "Instant download on release",
-        "Printable + digital use",
-        "Lifetime access",
-      ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_VINTAGE",
-    },
-    seo: {
-      title: "50 Vintage Digital Templates | Printable Template Pack",
-      description:
-        "A pack of 50 vintage-inspired digital templates for journals, planners, and creative projects. Coming soon.",
-    },
-    publishedAt: "2026-10-01",
-  },
 ];
 
-/** Packs first, then singles, then other coming-soon creatives */
+/** E-books first, then kids packs + singles */
 export const products: DigitalProduct[] = [
-  ...coreProducts.filter((p) => p.type === "ebook"),
+  ...coreProducts,
   ...getAllKidsProducts(),
-  ...coreProducts.filter((p) => p.type !== "ebook"),
 ];
 
 export function getAllProducts(): DigitalProduct[] {
@@ -438,5 +305,7 @@ export function getProductTypeLabel(type: DigitalProduct["type"]): string {
       return "Clipart";
     case "template_pack":
       return "Templates";
+    default:
+      return "Digital product";
   }
 }

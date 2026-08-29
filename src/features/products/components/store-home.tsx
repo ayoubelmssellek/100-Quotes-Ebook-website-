@@ -22,7 +22,7 @@ export function StoreHome({ products }: StoreHomeProps) {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--slate)] md:text-lg">
             Mind & Heart Hub offers e-books and digital downloads — from
-            motivational reading to kids science stories and creative packs.
+            motivational reading to kids science stories.
             Checkout is secured on Whop with instant access after payment.
           </p>
         </div>

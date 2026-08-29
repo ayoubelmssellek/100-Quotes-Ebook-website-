@@ -4,9 +4,7 @@ Next.js storefront for e-books and digital downloads:
 
 - **100 Inspirational Quotes for Self-Improvement** — $12
 - **Everyday Motivation** — $12
-- Kids Story Books Collection — $19 (coming soon)
-- Black & White Animal Clipart — $15 (coming soon)
-- 50 Vintage Digital Templates — $27 (coming soon)
+- **Kids Science Stories** — singles ($12) + Basic / Premium / Pro packs
 
 ## Stack
 

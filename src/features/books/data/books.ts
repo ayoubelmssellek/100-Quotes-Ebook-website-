@@ -17,7 +17,7 @@ export function getAllBooks(): DigitalProduct[] {
   return getProductsByType("ebook");
 }
 
-/** Any catalog product (ebooks, clipart, templates, kids) */
+/** Any catalog product (ebooks, kids stories) */
 export function getBookBySlug(slug: string): DigitalProduct | undefined {
   return getProductBySlug(slug);
 }

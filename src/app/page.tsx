@@ -14,7 +14,7 @@ export default function HomePage() {
         url: absoluteUrl(),
         name: "Mind & Heart Hub",
         description:
-          "Digital products store for e-books, kids stories, clipart, and vintage templates.",
+          "Digital products store for motivational e-books and kids science stories.",
         publisher: {
           "@type": "Organization",
           name: "Mind & Heart Hub",
