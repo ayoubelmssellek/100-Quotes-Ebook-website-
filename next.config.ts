@@ -65,6 +65,25 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  async redirects() {
+    return [
+      {
+        source: "/books/kids-stories-pack-5",
+        destination: "/books/kids-stories-basic-pack",
+        permanent: true,
+      },
+      {
+        source: "/books/kids-stories-pack-10",
+        destination: "/books/kids-stories-premium-pack",
+        permanent: true,
+      },
+      {
+        source: "/books/kids-stories-canva-pack",
+        destination: "/books/kids-stories-pro-pack",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -176,7 +176,7 @@ const sharedKidsFaqs: DigitalProduct["faqs"] = [
   {
     question: "Can I buy packs instead of one book?",
     answer:
-      "Yes. Choose the first 5 books for $28, all 10 PDFs for $35, or the Canva editable links pack for $50.",
+      "Yes. Choose the Basic Pack (2 books) for $28, the Premium Pack (3 books) for $35, or the Pro Pack (editable Canva links) for $50.",
   },
 ];
 
@@ -261,50 +261,50 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
 
 export const kidsStoryProducts: DigitalProduct[] = kidsStories.map(storyToProduct);
 
-const firstFive = kidsStories.filter((s) => s.num <= 5);
-const allTen = kidsStories;
+const basicPackStories = kidsStories.filter((s) => s.num <= 2);
+const premiumPackStories = kidsStories.filter((s) => s.num <= 3);
 
 export const kidsPackProducts: DigitalProduct[] = [
   {
-    id: "kids_pack_5",
-    slug: "kids-stories-pack-5",
+    id: "kids_pack_basic",
+    slug: "kids-stories-basic-pack",
     type: "kids_book",
     status: "available",
-    title: "Kids Science Stories - First 5 Pack",
-    subtitle: "5 illustrated PDFs | Save vs buying one by one",
+    title: "Kids Science Stories – Basic Pack",
+    subtitle: "2 illustrated PDFs · Starter value",
     shortDescription:
-      "Get the first five kids science storybooks as instant PDF downloads: Renewable Energy, Shooting Stars, Floods, Sink or Float, and Moon Magic.",
+      "Start with two kids science storybooks: Renewable Energy and Shooting Stars & Cosmic Visitors.",
     longDescription:
-      "A curated starter pack of five colorful educational storybooks. Topics cover renewable energy, meteors and comets, floods, sink-or-float science, and lunar eclipses - perfect for parents and teachers building a mini STEM library.",
+      "The Basic Pack is the perfect starter set — two colorful educational storybooks covering renewable energy and space (meteors & comets). Ideal if you want to try the series before getting a larger pack.",
     author: "Mind & Heart Hub",
     coverImage: "/products/kids-stories/pack-5-cover.jpg",
     formats: ["pdf", "zip"],
-    itemCount: 5,
+    itemCount: 2,
     language: "English",
     category: "Kids Science Stories",
-    tags: ["kids", "pack", "science", "STEM"],
+    tags: ["kids", "pack", "basic", "science", "STEM"],
     features: [
       {
-        title: "5 complete story PDFs",
-        description: "Books 1-5 from the Kids Science Stories series.",
+        title: "2 complete story PDFs",
+        description: "Books 1–2 from the Kids Science Stories series.",
         icon: "layers",
         tint: "mint",
       },
       {
-        title: "Better value",
-        description: "$28 for five books - less than buying each at $12.",
+        title: "Starter set",
+        description: "Two story PDFs in one easy purchase — $28.",
         icon: "sparkles",
         tint: "yellow",
       },
       {
-        title: "Instant downloads",
-        description: "Access every PDF right after purchase.",
+        title: "Instant access",
+        description: "Get both PDFs right after Whop checkout.",
         icon: "file",
         tint: "sky",
       },
     ],
     benefits: [],
-    previews: firstFive.map((s) => ({
+    previews: basicPackStories.map((s) => ({
       src: s.cover,
       alt: s.title,
       label: s.title,
@@ -314,53 +314,52 @@ export const kidsPackProducts: DigitalProduct[] = [
     pricing: {
       price: 28,
       currency: "USD",
-      compareAtPrice: 60,
       features: [
-        "5 kids science story PDFs",
-        "Books 1-5 included",
-        "Instant downloads",
+        "2 kids science story PDFs",
+        "Books 1–2 included",
+        "Instant access via Whop",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PACK5",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_BASIC",
     },
     seo: {
-      title: "Kids Science Stories Pack (5 Books) | $28",
+      title: "Kids Science Stories Basic Pack (2 Books) | $28",
       description:
-        "First 5 kids science storybook PDFs: energy, space, floods, sink-or-float, and lunar eclipse. Instant download.",
+        "Basic Pack: 2 kids science storybook PDFs — Renewable Energy and Shooting Stars. Instant Whop download.",
     },
     publishedAt: "2026-08-27",
     featured: true,
-    downloadIds: firstFive.map((s) => s.downloadId),
-    bundleSlugs: firstFive.map((s) => `kids-${s.slug}`),
+    downloadIds: basicPackStories.map((s) => s.downloadId),
+    bundleSlugs: basicPackStories.map((s) => `kids-${s.slug}`),
   },
   {
-    id: "kids_pack_10",
-    slug: "kids-stories-pack-10",
+    id: "kids_pack_premium",
+    slug: "kids-stories-premium-pack",
     type: "kids_book",
     status: "available",
-    title: "Kids Science Stories - Complete 10 Pack",
-    subtitle: "All 10 illustrated PDFs | Best PDF value",
+    title: "Kids Science Stories – Premium Pack",
+    subtitle: "3 illustrated PDFs · Best PDF value",
     shortDescription:
-      "All 10 kids science storybooks in one purchase - space, ocean, recycling, germs, exercise, and more.",
+      "Three kids science storybooks: Renewable Energy, Shooting Stars, and Understanding Floods.",
     longDescription:
-      "The full Kids Science Stories library: renewable energy, shooting stars, floods, sink or float, lunar & solar eclipses, recycling, germs, exercise, and ocean adventures. Ten colorful PDFs for a complete young-reader STEM shelf.",
+      "The Premium Pack includes three colorful educational storybooks — renewable energy, meteors & comets, and floods. A strong mini STEM set for parents and teachers.",
     author: "Mind & Heart Hub",
     coverImage: "/products/kids-stories/pack-10-cover.jpg",
     formats: ["pdf", "zip"],
-    itemCount: 10,
+    itemCount: 3,
     language: "English",
     category: "Kids Science Stories",
-    tags: ["kids", "pack", "science", "complete"],
+    tags: ["kids", "pack", "premium", "science"],
     features: [
       {
-        title: "All 10 story PDFs",
-        description: "The complete series in one checkout.",
+        title: "3 complete story PDFs",
+        description: "Books 1–3 from the Kids Science Stories series.",
         icon: "layers",
         tint: "peach",
       },
       {
-        title: "Biggest PDF savings",
-        description: "$35 for ten books vs $120 if bought separately.",
+        title: "Premium savings",
+        description: "$35 for three books vs buying each separately.",
         icon: "sparkles",
         tint: "yellow",
       },
@@ -372,7 +371,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       },
     ],
     benefits: [],
-    previews: allTen.map((s) => ({
+    previews: premiumPackStories.map((s) => ({
       src: s.cover,
       alt: s.title,
       label: `#${s.num} ${s.title}`,
@@ -382,43 +381,43 @@ export const kidsPackProducts: DigitalProduct[] = [
     pricing: {
       price: 35,
       currency: "USD",
-      compareAtPrice: 120,
+      compareAtPrice: 36,
       features: [
-        "All 10 kids science story PDFs",
-        "Instant downloads",
+        "3 kids science story PDFs",
+        "Books 1–3 included",
+        "Instant access via Whop",
         "Lifetime access",
-        "Best PDF pack value",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PACK10",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PREMIUM",
     },
     seo: {
-      title: "Kids Science Stories Complete Pack (10 Books) | $35",
+      title: "Kids Science Stories Premium Pack (3 Books) | $35",
       description:
-        "All 10 illustrated kids science story PDFs. Space, ocean, recycling, health, and more - instant download.",
+        "Premium Pack: 3 kids science storybook PDFs — energy, space, and floods. Instant Whop download.",
     },
     publishedAt: "2026-08-27",
     featured: true,
-    downloadIds: allTen.map((s) => s.downloadId),
-    bundleSlugs: allTen.map((s) => `kids-${s.slug}`),
+    downloadIds: premiumPackStories.map((s) => s.downloadId),
+    bundleSlugs: premiumPackStories.map((s) => `kids-${s.slug}`),
   },
   {
-    id: "kids_canva_pack",
-    slug: "kids-stories-canva-pack",
+    id: "kids_pack_pro",
+    slug: "kids-stories-pro-pack",
     type: "kids_book",
     status: "available",
-    title: "Kids Science Stories - Canva Editable Pack",
-    subtitle: "10 Canva design links you can customize",
+    title: "Kids Science Stories – Pro Pack",
+    subtitle: "Editable Canva links · Customize the designs",
     shortDescription:
-      "Get Canva links for the kids science stories so you can edit text, colors, and layouts for your own use.",
+      "Pro Pack: one PDF with Canva links so you can edit the kids science story designs yourself.",
     longDescription:
-      "This pack delivers a PDF with Canva links to the kids science story designs. Open each link in Canva to customize for classrooms, printables, or personal projects (requires a Canva account). Ideal if you want editable versions - not just fixed PDFs.",
+      "The Pro Pack delivers a PDF with Canva links to the kids science story designs. Open each link in Canva to customize text, colors, and layouts for classrooms, printables, or personal projects (requires a Canva account).",
     author: "Mind & Heart Hub",
     coverImage: "/products/kids-stories/canva-pack-cover.jpg",
     formats: ["pdf"],
-    itemCount: 10,
+    itemCount: 1,
     language: "English",
     category: "Kids Science Stories",
-    tags: ["kids", "canva", "editable", "templates"],
+    tags: ["kids", "pro", "canva", "editable"],
     features: [
       {
         title: "Canva edit links",
@@ -427,9 +426,9 @@ export const kidsPackProducts: DigitalProduct[] = [
         tint: "lavender",
       },
       {
-        title: "10 story designs",
-        description: "Full set of kids science story Canva links.",
-        icon: "layers",
+        title: "One links PDF",
+        description: "A single download with your editable design links.",
+        icon: "file",
         tint: "mint",
       },
       {
@@ -449,9 +448,9 @@ export const kidsPackProducts: DigitalProduct[] = [
           "Yes. You need a free or paid Canva account to open and edit the design links.",
       },
       {
-        question: "Is this the same as the PDF pack?",
+        question: "Is this the same as Basic or Premium?",
         answer:
-          "No. The $35 pack gives finished PDF storybooks. This $50 pack gives Canva links so you can modify the designs.",
+          "No. Basic and Premium give finished story PDFs. Pro Pack gives Canva links so you can modify the designs.",
       },
       ...sharedKidsFaqs,
     ],
@@ -459,17 +458,17 @@ export const kidsPackProducts: DigitalProduct[] = [
       price: 50,
       currency: "USD",
       features: [
-        "PDF with 10 Canva design links",
+        "1 PDF with Canva design links",
         "Editable in Canva",
-        "Instant download",
+        "Instant access via Whop",
         "Lifetime access to your links file",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_CANVA",
+      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PRO",
     },
     seo: {
-      title: "Kids Science Stories Canva Editable Pack | $50",
+      title: "Kids Science Stories Pro Pack | Canva Editable | $50",
       description:
-        "10 Canva links for kids science stories you can edit and customize. Instant download.",
+        "Pro Pack: Canva links for kids science stories you can edit and customize. Instant Whop download.",
     },
     publishedAt: "2026-08-27",
     featured: true,

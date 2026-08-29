@@ -6,7 +6,7 @@ const footerColumns = [
     title: "Store",
     links: [
       { href: "/#shop", label: "All Products" },
-      { href: "/books/kids-stories-pack-10", label: "Kids Stories" },
+      { href: "/books/kids-stories-premium-pack", label: "Kids Stories" },
       { href: "/books/everyday-motivation", label: "Everyday Motivation" },
       {
         href: "/books/100-inspirational-quotes-for-self-improvement",

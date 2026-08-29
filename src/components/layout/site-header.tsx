@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/#shop", label: "Shop" },
-  { href: "/books/kids-stories-pack-10", label: "Kids Stories" },
+  { href: "/books/kids-stories-premium-pack", label: "Kids Stories" },
   { href: "/books/everyday-motivation", label: "E-books" },
   { href: "/contact", label: "Support" },
 ];
