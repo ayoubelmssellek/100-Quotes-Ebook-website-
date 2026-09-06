@@ -43,7 +43,7 @@ export function PricingSection({ book }: PricingSectionProps) {
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
             {isComingSoon
               ? "This product is not for sale yet."
-              : "Pay securely on Whop. Instant file access after checkout."}
+              : "Pay securely. Instant file access after checkout."}
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export function PricingSection({ book }: PricingSectionProps) {
               ) : null}
             </div>
             <p className="mt-2 text-sm text-[var(--steel)]">
-              One-time payment · Delivered by Whop
+              One-time payment · Instant digital delivery
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -107,7 +107,7 @@ export function PricingSection({ book }: PricingSectionProps) {
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
               {isComingSoon
                 ? "We’ll let you know when this product launches."
-                : "Secure Whop checkout. After you pay, Whop delivers your files."}
+                : "Secure checkout. Your files are available after payment."}
             </p>
           </article>
         </div>

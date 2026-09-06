@@ -41,7 +41,7 @@ export function SiteFooter() {
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--steel)]">
             Premium digital products — e-books and kids science stories with
-            instant Whop delivery.
+            instant digital delivery.
           </p>
           <p className="text-sm text-[var(--stone)]">@mind_and_heart_hub</p>
           <p className="text-sm text-[var(--steel)]">
@@ -79,7 +79,7 @@ export function SiteFooter() {
       <div className="border-t border-[var(--hairline)]">
         <div className="mx-auto flex max-w-[1120px] flex-col gap-2 px-6 py-5 text-sm text-[var(--steel)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Mind & Heart Hub. All rights reserved.</p>
-          <p>Secure Whop checkout · Instant access</p>
+          <p>Secure checkout · Instant access</p>
         </div>
       </div>
     </footer>

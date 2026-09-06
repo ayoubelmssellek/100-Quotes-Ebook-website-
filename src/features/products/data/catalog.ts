@@ -335,7 +335,7 @@ const coreProducts: DigitalProduct[] = [
       },
       {
         question: "How do I receive the files?",
-        answer: "After successful payment, Whop delivers the three PDF files instantly.",
+        answer: "After successful payment, the three PDF files are delivered instantly.",
       },
     ],
     pricing: {

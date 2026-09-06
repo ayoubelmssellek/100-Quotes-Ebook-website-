@@ -166,12 +166,12 @@ const sharedKidsFaqs: DigitalProduct["faqs"] = [
   {
     question: "What format do I get?",
     answer:
-      "You receive a high-quality PDF via Whop after checkout. Read it on phone, tablet, or computer, and print at home if you like.",
+      "You receive a high-quality PDF after checkout. Read it on phone, tablet, or computer, and print at home if you like.",
   },
   {
     question: "How do I get the files after paying?",
     answer:
-      "Buy Now opens Whop checkout. After payment, Whop gives you instant access to download your files from your Whop account.",
+      "Buy Now opens secure checkout. After payment, you get instant access to download your files.",
   },
   {
     question: "Can I buy packs instead of one book?",
@@ -257,7 +257,7 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
       features: [
         "1 illustrated kids science PDF",
         `${story.pageCount} pages`,
-        "Instant access via Whop after payment",
+        "Instant access after payment",
         "Lifetime access",
       ],
       checkoutUrl: storyCheckoutUrls[story.num],
@@ -311,7 +311,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       },
       {
         title: "Instant access",
-        description: "Get both PDFs right after Whop checkout.",
+        description: "Get both PDFs right after checkout.",
         icon: "file",
         tint: "sky",
       },
@@ -330,7 +330,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       features: [
         "2 kids science story PDFs",
         "Books 1–2 included",
-        "Instant access via Whop",
+        "Instant access after payment",
         "Lifetime access",
       ],
       checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
@@ -350,7 +350,7 @@ export const kidsPackProducts: DigitalProduct[] = [
     seo: {
       title: "Kids Science Stories Basic Pack (2 Books) | $28",
       description:
-        "Basic Pack: 2 kids science storybook PDFs — Renewable Energy and Shooting Stars. Instant Whop download.",
+        "Basic Pack: 2 kids science storybook PDFs — Renewable Energy and Shooting Stars. Instant digital download.",
     },
     publishedAt: "2026-08-27",
     featured: true,
@@ -410,7 +410,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       features: [
         "3 kids science story PDFs",
         "Books 1–3 included",
-        "Instant access via Whop",
+        "Instant access after payment",
         "Lifetime access",
       ],
       checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
@@ -432,7 +432,7 @@ export const kidsPackProducts: DigitalProduct[] = [
     seo: {
       title: "Kids Science Stories Premium Pack (3 Books) | $35",
       description:
-        "Premium Pack: 3 kids science storybook PDFs — energy, space, and floods. Instant Whop download.",
+        "Premium Pack: 3 kids science storybook PDFs — energy, space, and floods. Instant digital download.",
     },
     publishedAt: "2026-08-27",
     featured: true,
@@ -499,7 +499,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       features: [
         "1 PDF with Canva design links",
         "Editable in Canva",
-        "Instant access via Whop",
+        "Instant access after payment",
         "Lifetime access to your links file",
       ],
       checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
@@ -519,7 +519,7 @@ export const kidsPackProducts: DigitalProduct[] = [
     seo: {
       title: "Kids Science Stories Pro Pack | Canva Editable | $50",
       description:
-        "Pro Pack: Canva links for kids science stories you can edit and customize. Instant Whop download.",
+        "Pro Pack: Canva links for kids science stories you can edit and customize. Instant digital download.",
     },
     publishedAt: "2026-08-27",
     featured: true,
