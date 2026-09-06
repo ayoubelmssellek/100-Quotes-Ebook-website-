@@ -359,7 +359,7 @@ const coreProducts: DigitalProduct[] = [
           checkoutUrl: "https://whop.com/checkout/plan_9tIMi86R9B5um",
         },
         {
-          price: 100,
+          price: 116,
           currency: "USD",
         },
       ],
