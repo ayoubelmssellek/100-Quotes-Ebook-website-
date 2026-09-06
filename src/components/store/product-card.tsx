@@ -47,21 +47,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </h3>
         <div className="mt-2 flex items-center justify-between gap-2">
           <p className="text-[14px] font-semibold text-[var(--ink)]">
-            {product.pricing.currencyOptions?.length ? (
-              product.pricing.currencyOptions
-                .slice()
-                .sort((first, second) =>
-                  first.currency === "USD" ? -1 : second.currency === "USD" ? 1 : 0,
-                )
-                .map((option, index) => (
-                  <span key={option.currency}>
-                    {index > 0 ? " / " : null}
-                    {formatPrice(option.price, option.currency)}
-                  </span>
-                ))
-            ) : (
-              formatPrice(product.pricing.price, product.pricing.currency)
-            )}
+            {formatPrice(product.pricing.price, product.pricing.currency)}
           </p>
           <Link
             href={href}
