@@ -329,7 +329,7 @@ export const kidsPackProducts: DigitalProduct[] = [
     testimonials: [],
     faqs: sharedKidsFaqs,
     pricing: {
-      price: 45,
+      price: 25,
       currency: "EUR",
       features: [
         "2 kids science story PDFs",
@@ -340,7 +340,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
       currencyOptions: [
         {
-          price: 45,
+          price: 25,
           currency: "EUR",
           checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
         },
@@ -498,7 +498,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       ...sharedKidsFaqs,
     ],
     pricing: {
-      price: 25,
+      price: 45,
       currency: "EUR",
       features: [
         "1 PDF with Canva design links",
@@ -509,7 +509,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
       currencyOptions: [
         {
-          price: 25,
+          price: 45,
           currency: "EUR",
           checkoutUrl: "https://whop.com/checkout/plan_LUaEbX8EbWoJA",
         },
