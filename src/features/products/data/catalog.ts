@@ -288,7 +288,7 @@ const coreProducts: DigitalProduct[] = [
       "The Ultimate Motivation Bundle brings together three practical digital resources: an editable PDF, 100 Inspirational Quotes for Self-Improvement, and Everyday Motivation. Read, reflect, and make the editable resource your own.",
     author: "Ayoub El Mssellek",
     authorHandle: "@mind_and_heart_hub",
-    coverImage: "/books/100-inspirational-quotes/cover.png",
+    coverImage: "/books/ultimate-pack/image.webp",
     formats: ["pdf"],
     itemCount: 3,
     language: "English",
