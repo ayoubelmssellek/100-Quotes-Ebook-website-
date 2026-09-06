@@ -252,8 +252,8 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
     testimonials: [],
     faqs: sharedKidsFaqs,
     pricing: {
-      price: 12,
-      currency: "USD",
+      price: 11,
+      currency: "EUR",
       features: [
         "1 illustrated kids science PDF",
         `${story.pageCount} pages`,
@@ -261,6 +261,10 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
         "Lifetime access",
       ],
       checkoutUrl: storyCheckoutUrls[story.num],
+      currencyOptions: [
+        { price: 11, currency: "EUR" },
+        { price: 12, currency: "USD", checkoutUrl: storyCheckoutUrls[story.num] },
+      ],
     },
     seo: {
       title: `${story.title} | Kids Science Story PDF $12`,
@@ -325,8 +329,8 @@ export const kidsPackProducts: DigitalProduct[] = [
     testimonials: [],
     faqs: sharedKidsFaqs,
     pricing: {
-      price: 28,
-      currency: "USD",
+      price: 25,
+      currency: "EUR",
       features: [
         "2 kids science story PDFs",
         "Books 1–2 included",
@@ -336,14 +340,14 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
       currencyOptions: [
         {
-          price: 28,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
+          price: 25,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
         },
         {
           price: 28,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
         },
       ],
     },
@@ -404,8 +408,8 @@ export const kidsPackProducts: DigitalProduct[] = [
     testimonials: [],
     faqs: sharedKidsFaqs,
     pricing: {
-      price: 35,
-      currency: "USD",
+      price: 32,
+      currency: "EUR",
       compareAtPrice: 36,
       features: [
         "3 kids science story PDFs",
@@ -416,16 +420,16 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
       currencyOptions: [
         {
+          price: 32,
+          currency: "EUR",
+          compareAtPrice: 36,
+          checkoutUrl: "https://whop.com/checkout/plan_MNs39xgphyA7X",
+        },
+        {
           price: 35,
           currency: "USD",
           compareAtPrice: 36,
           checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
-        },
-        {
-          price: 35,
-          currency: "EUR",
-          compareAtPrice: 36,
-          checkoutUrl: "https://whop.com/checkout/plan_MNs39xgphyA7X",
         },
       ],
     },
@@ -494,8 +498,8 @@ export const kidsPackProducts: DigitalProduct[] = [
       ...sharedKidsFaqs,
     ],
     pricing: {
-      price: 50,
-      currency: "USD",
+      price: 25,
+      currency: "EUR",
       features: [
         "1 PDF with Canva design links",
         "Editable in Canva",
@@ -505,14 +509,14 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
       currencyOptions: [
         {
-          price: 50,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
+          price: 25,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_LUaEbX8EbWoJA",
         },
         {
           price: 50,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_LUaEbX8EbWoJA",
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
         },
       ],
     },

@@ -119,8 +119,8 @@ const coreProducts: DigitalProduct[] = [
       },
     ],
     pricing: {
-      price: 12,
-      currency: "USD",
+      price: 11,
+      currency: "EUR",
       features: [
         "100 inspirational quotes",
         "Instant PDF download",
@@ -129,6 +129,10 @@ const coreProducts: DigitalProduct[] = [
         "Free updates included",
       ],
       checkoutUrl: "https://whop.com/checkout/plan_8dw15g0evaQQR",
+      currencyOptions: [
+        { price: 11, currency: "EUR" },
+        { price: 12, currency: "USD", checkoutUrl: "https://whop.com/checkout/plan_8dw15g0evaQQR" },
+      ],
     },
     seo: {
       title: "100 Inspirational Quotes for Self-Improvement | E-book $12",
@@ -243,8 +247,8 @@ const coreProducts: DigitalProduct[] = [
       },
     ],
     pricing: {
-      price: 12,
-      currency: "USD",
+      price: 11,
+      currency: "EUR",
       features: [
         "54 inspiring pages",
         "5 themes: family, friends, time, growth, purpose",
@@ -255,14 +259,14 @@ const coreProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
       currencyOptions: [
         {
-          price: 12,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
+          price: 11,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_ELoE9GTCBurro",
         },
         {
           price: 12,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_ELoE9GTCBurro",
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
         },
       ],
     },
@@ -353,6 +357,10 @@ const coreProducts: DigitalProduct[] = [
           price: 100,
           currency: "EUR",
           checkoutUrl: "https://whop.com/checkout/plan_9tIMi86R9B5um",
+        },
+        {
+          price: 100,
+          currency: "USD",
         },
       ],
     },
