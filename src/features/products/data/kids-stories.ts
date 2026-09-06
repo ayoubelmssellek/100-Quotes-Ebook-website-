@@ -329,7 +329,7 @@ export const kidsPackProducts: DigitalProduct[] = [
     testimonials: [],
     faqs: sharedKidsFaqs,
     pricing: {
-      price: 25,
+      price: 45,
       currency: "EUR",
       features: [
         "2 kids science story PDFs",
@@ -340,7 +340,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
       currencyOptions: [
         {
-          price: 25,
+          price: 45,
           currency: "EUR",
           checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
         },
