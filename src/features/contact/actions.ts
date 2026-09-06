@@ -119,7 +119,8 @@ export async function startCheckout(formData: FormData): Promise<void> {
     throw new Error("Product not found.");
   }
 
-  const externalUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
+  const externalUrl =
+    book.pricing.checkoutUrl ?? getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
   if (parsed.data.provider === "external" || !parsed.data.provider) {
     if (externalUrl) {
       redirect(externalUrl);

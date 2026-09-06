@@ -8,6 +8,7 @@
 export const WHOP_CHECKOUT_ENV_KEYS = [
   "NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES",
   "NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY",
+  "NEXT_PUBLIC_WHOP_CHECKOUT_ULTIMATE_EUR",
   "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01",
   "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_02",
   "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_03",
@@ -36,6 +37,8 @@ export function getWhopCheckoutEnvMap(): Record<string, string | undefined> {
       process.env.NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES,
     NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY:
       process.env.NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY,
+    NEXT_PUBLIC_WHOP_CHECKOUT_ULTIMATE_EUR:
+      process.env.NEXT_PUBLIC_WHOP_CHECKOUT_ULTIMATE_EUR,
     NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01:
       process.env.NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01,
     NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_02:
@@ -89,6 +92,7 @@ export function getWhopCheckoutEnvMap(): Record<string, string | undefined> {
 
 export function getProductCheckoutUrl(
   checkoutUrlEnv?: string,
+  useFallback = true,
 ): string | undefined {
   const byEnv = getWhopCheckoutEnvMap();
 
@@ -96,6 +100,8 @@ export function getProductCheckoutUrl(
     const specific = byEnv[checkoutUrlEnv]?.trim();
     if (specific) return specific;
   }
+
+  if (!useFallback) return undefined;
 
   const fallback = byEnv.NEXT_PUBLIC_CHECKOUT_URL?.trim();
   return fallback || undefined;

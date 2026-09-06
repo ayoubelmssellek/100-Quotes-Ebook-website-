@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CheckoutButton } from "@/components/shared/checkout-button";
+import { CurrencyCheckout } from "@/components/shared/currency-checkout";
 import { getProductCheckoutUrl } from "@/features/payments";
 import { getProductTypeLabel } from "@/features/products/data/catalog";
 import { formatPrice } from "@/lib/utils";
@@ -21,8 +21,21 @@ export function HeroSection({ book }: HeroSectionProps) {
   ].filter(Boolean);
 
   const previewHref = book.previews.length > 0 ? "#preview" : "#about";
-  const checkoutUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
   const isComingSoon = book.status === "coming_soon";
+  const checkoutOptions = (book.pricing.currencyOptions ?? [
+    {
+      price: book.pricing.price,
+      currency: book.pricing.currency as "USD" | "EUR",
+      compareAtPrice: book.pricing.compareAtPrice,
+      checkoutUrl: book.pricing.checkoutUrl,
+      checkoutUrlEnv: book.pricing.checkoutUrlEnv,
+    },
+  ]).map((option) => ({
+    ...option,
+    checkoutUrl:
+      option.checkoutUrl ??
+      getProductCheckoutUrl(option.checkoutUrlEnv, !book.pricing.currencyOptions),
+  }));
 
   return (
     <section className="relative overflow-hidden text-[var(--ink)]">
@@ -63,13 +76,7 @@ export function HeroSection({ book }: HeroSectionProps) {
                 <Link href="/contact">Get notified</Link>
               </Button>
             ) : (
-              <CheckoutButton
-                href={checkoutUrl || "#pricing"}
-                variant="primary"
-                size="lg"
-              >
-                Pay now
-              </CheckoutButton>
+              <CurrencyCheckout options={checkoutOptions} />
             )}
             <Button asChild variant="secondary" size="lg">
               <Link href={previewHref}>

@@ -180,6 +180,19 @@ const sharedKidsFaqs: DigitalProduct["faqs"] = [
   },
 ];
 
+const storyCheckoutUrls: Record<number, string> = {
+  1: "https://whop.com/checkout/plan_QGKsAWEG2rYRK",
+  2: "https://whop.com/checkout/plan_CWVS86RMyhjXB",
+  3: "https://whop.com/checkout/plan_Gb8zKdG7uqSZ0",
+  4: "https://whop.com/checkout/plan_TlhlvXxohbPW3",
+  5: "https://whop.com/checkout/plan_PoHk175eZojAT",
+  6: "https://whop.com/checkout/plan_T7fwVI1Sdsv9I",
+  7: "https://whop.com/checkout/plan_U2aapjK1t5PnK",
+  8: "https://whop.com/checkout/plan_iEtab6J7I3UUV",
+  9: "https://whop.com/checkout/plan_1I8prTz8HSBFh",
+  10: "https://whop.com/checkout/plan_xhazJ4EnoKScY",
+};
+
 function storyToProduct(story: KidsStoryMeta): DigitalProduct {
   return {
     id: `kids_${story.num.toString().padStart(2, "0")}_${story.slug.replace(/-/g, "_")}`,
@@ -247,7 +260,7 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
         "Instant access via Whop after payment",
         "Lifetime access",
       ],
-      checkoutUrlEnv: `NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_${String(story.num).padStart(2, "0")}`,
+      checkoutUrl: storyCheckoutUrls[story.num],
     },
     seo: {
       title: `${story.title} | Kids Science Story PDF $12`,
@@ -320,7 +333,19 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access via Whop",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_BASIC",
+      checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
+      currencyOptions: [
+        {
+          price: 28,
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
+        },
+        {
+          price: 28,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
+        },
+      ],
     },
     seo: {
       title: "Kids Science Stories Basic Pack (2 Books) | $28",
@@ -388,7 +413,21 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access via Whop",
         "Lifetime access",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PREMIUM",
+      checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
+      currencyOptions: [
+        {
+          price: 35,
+          currency: "USD",
+          compareAtPrice: 36,
+          checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
+        },
+        {
+          price: 35,
+          currency: "EUR",
+          compareAtPrice: 36,
+          checkoutUrl: "https://whop.com/checkout/plan_MNs39xgphyA7X",
+        },
+      ],
     },
     seo: {
       title: "Kids Science Stories Premium Pack (3 Books) | $35",
@@ -463,7 +502,19 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access via Whop",
         "Lifetime access to your links file",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_PRO",
+      checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
+      currencyOptions: [
+        {
+          price: 50,
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
+        },
+        {
+          price: 50,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_LUaEbX8EbWoJA",
+        },
+      ],
     },
     seo: {
       title: "Kids Science Stories Pro Pack | Canva Editable | $50",

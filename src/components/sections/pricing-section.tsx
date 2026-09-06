@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { CheckoutButton } from "@/components/shared/checkout-button";
+import { CurrencyCheckout } from "@/components/shared/currency-checkout";
 import { getProductCheckoutUrl } from "@/features/payments";
 import { formatPrice } from "@/lib/utils";
 import type { DigitalProduct } from "@/types/product";
@@ -10,16 +10,25 @@ type PricingSectionProps = {
 
 export function PricingSection({ book }: PricingSectionProps) {
   const isComingSoon = book.status === "coming_soon";
-  const checkoutUrl = getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
+  const checkoutOptions = (book.pricing.currencyOptions ?? [
+    {
+      price: book.pricing.price,
+      currency: book.pricing.currency as "USD" | "EUR",
+      compareAtPrice: book.pricing.compareAtPrice,
+      checkoutUrl: book.pricing.checkoutUrl,
+      checkoutUrlEnv: book.pricing.checkoutUrlEnv,
+    },
+  ]).map((option) => ({
+    ...option,
+    checkoutUrl:
+      option.checkoutUrl ??
+      getProductCheckoutUrl(option.checkoutUrlEnv, !book.pricing.currencyOptions),
+  }));
 
   const productLabel =
     book.type === "ebook"
       ? "One e-book. Lifetime access."
       : "One download. Lifetime access.";
-
-  const payHref = isComingSoon
-    ? "/contact"
-    : checkoutUrl || "#pricing";
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[var(--surface-soft)] py-16 md:py-24">
@@ -48,13 +57,16 @@ export function PricingSection({ book }: PricingSectionProps) {
             </h3>
             <div className="mt-4 flex items-end gap-3">
               <p className="text-5xl font-semibold tracking-tight text-[var(--ink)]">
-                {formatPrice(book.pricing.price, book.pricing.currency)}
+                {formatPrice(
+                  checkoutOptions[0].price,
+                  checkoutOptions[0].currency,
+                )}
               </p>
-              {book.pricing.compareAtPrice ? (
+              {checkoutOptions[0].compareAtPrice ? (
                 <p className="mb-2 text-base text-[var(--stone)] line-through">
                   {formatPrice(
-                    book.pricing.compareAtPrice,
-                    book.pricing.currency,
+                    checkoutOptions[0].compareAtPrice,
+                    checkoutOptions[0].currency,
                   )}
                 </p>
               ) : null}
@@ -78,14 +90,19 @@ export function PricingSection({ book }: PricingSectionProps) {
               ))}
             </ul>
 
-            <CheckoutButton
-              href={payHref}
-              variant="primary"
-              size="lg"
-              className="mt-8 w-full"
-            >
-              {isComingSoon ? "Notify Me" : "Pay now"}
-            </CheckoutButton>
+            {isComingSoon ? (
+              <a
+                href="/contact"
+                className="mt-8 inline-flex h-11 w-full items-center justify-center rounded-full bg-[var(--primary)] px-6 text-sm font-medium text-[var(--on-primary)]"
+              >
+                Notify Me
+              </a>
+            ) : (
+              <CurrencyCheckout
+                options={checkoutOptions}
+                className="mt-8"
+              />
+            )}
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
               {isComingSoon

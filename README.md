@@ -4,6 +4,7 @@ Next.js storefront for e-books and digital downloads:
 
 - **100 Inspirational Quotes for Self-Improvement** — $12
 - **Everyday Motivation** — $12
+- **The Ultimate Motivation Bundle** — €100 (editable PDF + both motivation PDFs)
 - **Kids Science Stories** — singles ($12) + Basic / Premium / Pro packs
 
 ## Stack
@@ -33,6 +34,7 @@ Create each product on Whop, upload the files there, then paste the **checkout U
 PAYMENT_PROVIDER=whop
 NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES=https://whop.com/checkout/...
 NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY=https://whop.com/checkout/...
+NEXT_PUBLIC_WHOP_CHECKOUT_ULTIMATE_EUR=https://whop.com/checkout/...
 NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01=https://whop.com/checkout/...
 # ... see .env.example for all keys
 ```

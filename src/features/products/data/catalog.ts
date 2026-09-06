@@ -128,7 +128,7 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES",
+      checkoutUrl: "https://whop.com/checkout/plan_8dw15g0evaQQR",
     },
     seo: {
       title: "100 Inspirational Quotes for Self-Improvement | E-book $12",
@@ -252,7 +252,19 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrlEnv: "NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY",
+      checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
+      currencyOptions: [
+        {
+          price: 12,
+          currency: "USD",
+          checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
+        },
+        {
+          price: 12,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_ELoE9GTCBurro",
+        },
+      ],
     },
     seo: {
       title: "Everyday Motivation | 54-Page Motivational E-book $12",
@@ -262,6 +274,95 @@ const coreProducts: DigitalProduct[] = [
     publishedAt: "2026-08-27",
     featured: true,
     downloadIds: ["everyday-motivation"],
+  },
+  {
+    id: "bundle_ultimate_motivation",
+    slug: "ultimate-motivation-bundle",
+    type: "ebook",
+    status: "available",
+    title: "The Ultimate Motivation Bundle",
+    subtitle: "Three powerful PDF resources in one complete bundle",
+    shortDescription:
+      "Get the editable PDF, 100 Inspirational Quotes, and Everyday Motivation together for a focused collection of tools for growth and daily inspiration.",
+    longDescription:
+      "The Ultimate Motivation Bundle brings together three practical digital resources: an editable PDF, 100 Inspirational Quotes for Self-Improvement, and Everyday Motivation. Read, reflect, and make the editable resource your own.",
+    author: "Ayoub El Mssellek",
+    authorHandle: "@mind_and_heart_hub",
+    coverImage: "/books/100-inspirational-quotes/cover.png",
+    formats: ["pdf"],
+    itemCount: 3,
+    language: "English",
+    category: "Motivation",
+    tags: ["bundle", "motivation", "quotes", "editable-pdf", "self-improvement"],
+    features: [
+      {
+        title: "Editable PDF",
+        description: "A flexible PDF resource you can personalize for your own journey.",
+        icon: "pen-line",
+        tint: "peach",
+      },
+      {
+        title: "100 Inspirational Quotes",
+        description: "A curated collection of reminders for confidence and purposeful living.",
+        icon: "quote",
+        tint: "lavender",
+      },
+      {
+        title: "Everyday Motivation",
+        description: "Short reflections on family, friends, time, growth, and purpose.",
+        icon: "sun",
+        tint: "yellow",
+      },
+    ],
+    benefits: [
+      {
+        title: "One complete bundle",
+        description: "Three complementary resources delivered together after checkout.",
+        icon: "package-check",
+      },
+      {
+        title: "Read and reflect",
+        description: "Use the collection for daily inspiration, journaling, and reset moments.",
+        icon: "book-open",
+      },
+    ],
+    previews: [],
+    testimonials: [],
+    faqs: [
+      {
+        question: "What is included?",
+        answer: "You receive the editable PDF, 100 Inspirational Quotes for Self-Improvement, and Everyday Motivation.",
+      },
+      {
+        question: "How do I receive the files?",
+        answer: "After successful payment, Whop delivers the three PDF files instantly.",
+      },
+    ],
+    pricing: {
+      price: 100,
+      currency: "EUR",
+      features: [
+        "Editable PDF",
+        "100 Inspirational Quotes PDF",
+        "Everyday Motivation PDF",
+        "Instant digital delivery",
+        "Lifetime access",
+      ],
+      currencyOptions: [
+        {
+          price: 100,
+          currency: "EUR",
+          checkoutUrl: "https://whop.com/checkout/plan_9tIMi86R9B5um",
+        },
+      ],
+    },
+    seo: {
+      title: "The Ultimate Motivation Bundle | 3 PDFs for €100",
+      description:
+        "Get the editable PDF, 100 Inspirational Quotes, and Everyday Motivation in one complete digital bundle.",
+    },
+    publishedAt: "2026-09-06",
+    featured: true,
   },
 ];
 
