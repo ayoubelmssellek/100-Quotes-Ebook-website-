@@ -8,11 +8,11 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://api.stripe.com https://sandbox-api.paddle.com https://api.paddle.com",
-  "frame-src 'self' https://js.stripe.com https://checkout.stripe.com https://buy.paddle.com https://sandbox-buy.paddle.com",
+  "connect-src 'self' https://api.emailjs.com",
+  "frame-src 'self'",
   "frame-ancestors 'none'",
   "base-uri 'self'",
-  "form-action 'self' https://checkout.stripe.com https://buy.paddle.com https://sandbox-buy.paddle.com",
+  "form-action 'self'",
   "object-src 'none'",
   "upgrade-insecure-requests",
 ].join("; ");
@@ -41,7 +41,7 @@ const securityHeaders = [
   {
     key: "Permissions-Policy",
     value:
-      "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(self)",
+      "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=()",
   },
   {
     key: "X-DNS-Prefetch-Control",
@@ -58,6 +58,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  distDir: process.env.NEXT_DIST_DIR || ".next",
+  turbopack: {
+    root: process.cwd(),
+  },
   poweredByHeader: false,
   reactStrictMode: true,
   images: {

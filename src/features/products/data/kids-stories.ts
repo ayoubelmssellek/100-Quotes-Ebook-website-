@@ -166,32 +166,19 @@ const sharedKidsFaqs: DigitalProduct["faqs"] = [
   {
     question: "What format do I get?",
     answer:
-      "You receive a high-quality PDF after checkout. Read it on phone, tablet, or computer, and print at home if you like.",
+      "You receive a high-quality PDF after payment. Read it on phone, tablet, or computer, and print at home if you like.",
   },
   {
     question: "How do I get the files after paying?",
     answer:
-      "Buy Now opens secure checkout. After payment, you get instant access to download your files.",
+      "Select Order Now to submit your order on this website. After you pay using the instructions we send, you receive your files by email.",
   },
   {
     question: "Can I buy packs instead of one book?",
     answer:
-      "Yes. Choose the Basic Pack (2 books) for $28, the Premium Pack (3 books) for $35, or the Pro Pack (editable Canva links) for $50.",
+      "Yes. Choose the Basic Pack (2 books) for €25, the Premium Pack (3 books) for €32, or the Pro Pack (editable Canva links) for €45.",
   },
 ];
-
-const storyCheckoutUrls: Record<number, string> = {
-  1: "https://whop.com/checkout/plan_QGKsAWEG2rYRK",
-  2: "https://whop.com/checkout/plan_CWVS86RMyhjXB",
-  3: "https://whop.com/checkout/plan_Gb8zKdG7uqSZ0",
-  4: "https://whop.com/checkout/plan_TlhlvXxohbPW3",
-  5: "https://whop.com/checkout/plan_PoHk175eZojAT",
-  6: "https://whop.com/checkout/plan_T7fwVI1Sdsv9I",
-  7: "https://whop.com/checkout/plan_U2aapjK1t5PnK",
-  8: "https://whop.com/checkout/plan_iEtab6J7I3UUV",
-  9: "https://whop.com/checkout/plan_1I8prTz8HSBFh",
-  10: "https://whop.com/checkout/plan_xhazJ4EnoKScY",
-};
 
 function storyToProduct(story: KidsStoryMeta): DigitalProduct {
   return {
@@ -260,14 +247,9 @@ function storyToProduct(story: KidsStoryMeta): DigitalProduct {
         "Instant access after payment",
         "Lifetime access",
       ],
-      checkoutUrl: storyCheckoutUrls[story.num],
-      currencyOptions: [
-        { price: 11, currency: "EUR" },
-        { price: 12, currency: "USD", checkoutUrl: storyCheckoutUrls[story.num] },
-      ],
     },
     seo: {
-      title: `${story.title} | Kids Science Story PDF $12`,
+      title: `${story.title} | Kids Science Story PDF €11`,
       description: story.shortDescription,
     },
     publishedAt: "2026-08-27",
@@ -309,13 +291,13 @@ export const kidsPackProducts: DigitalProduct[] = [
       },
       {
         title: "Starter set",
-        description: "Two story PDFs in one easy purchase — $28.",
+        description: "Two story PDFs in one easy purchase — €25.",
         icon: "sparkles",
         tint: "yellow",
       },
       {
         title: "Instant access",
-        description: "Get both PDFs right after checkout.",
+        description: "Get both PDFs after payment.",
         icon: "file",
         tint: "sky",
       },
@@ -337,22 +319,9 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access after payment",
         "Lifetime access",
       ],
-      checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
-      currencyOptions: [
-        {
-          price: 25,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_lCTQuzMvWfNLc",
-        },
-        {
-          price: 28,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_6NSfI86FHMm5A",
-        },
-      ],
     },
     seo: {
-      title: "Kids Science Stories Basic Pack (2 Books) | $28",
+      title: "Kids Science Stories Basic Pack (2 Books) | €25",
       description:
         "Basic Pack: 2 kids science storybook PDFs — Renewable Energy and Shooting Stars. Instant digital download.",
     },
@@ -388,7 +357,7 @@ export const kidsPackProducts: DigitalProduct[] = [
       },
       {
         title: "Premium savings",
-        description: "$35 for three books vs buying each separately.",
+        description: "€32 for three books vs buying each separately.",
         icon: "sparkles",
         tint: "yellow",
       },
@@ -417,24 +386,9 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access after payment",
         "Lifetime access",
       ],
-      checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
-      currencyOptions: [
-        {
-          price: 32,
-          currency: "EUR",
-          compareAtPrice: 36,
-          checkoutUrl: "https://whop.com/checkout/plan_MNs39xgphyA7X",
-        },
-        {
-          price: 35,
-          currency: "USD",
-          compareAtPrice: 36,
-          checkoutUrl: "https://whop.com/checkout/plan_0S8v0BBRy7n8a",
-        },
-      ],
     },
     seo: {
-      title: "Kids Science Stories Premium Pack (3 Books) | $35",
+      title: "Kids Science Stories Premium Pack (3 Books) | €32",
       description:
         "Premium Pack: 3 kids science storybook PDFs — energy, space, and floods. Instant digital download.",
     },
@@ -506,22 +460,9 @@ export const kidsPackProducts: DigitalProduct[] = [
         "Instant access after payment",
         "Lifetime access to your links file",
       ],
-      checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
-      currencyOptions: [
-        {
-          price: 45,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_LUaEbX8EbWoJA",
-        },
-        {
-          price: 50,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_qo8g3OY2yz6i9",
-        },
-      ],
     },
     seo: {
-      title: "Kids Science Stories Pro Pack | Canva Editable | $50",
+      title: "Kids Science Stories Pro Pack | Canva Editable | €45",
       description:
         "Pro Pack: Canva links for kids science stories you can edit and customize. Instant digital download.",
     },

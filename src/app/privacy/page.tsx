@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -28,8 +29,8 @@ export default function PrivacyPage() {
         <ul className="list-disc space-y-2 pl-5">
           <li>Contact details you submit via forms (name, email, message).</li>
           <li>
-            Purchase-related details processed by our payment provider, such as
-            email and transaction identifiers.
+            Purchase-related details you include in order emails, such as
+            your email address and the product you requested.
           </li>
           <li>
             Basic technical data such as IP address, browser type, and pages
@@ -41,7 +42,7 @@ export default function PrivacyPage() {
         </h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>To deliver purchased digital products and customer support.</li>
-          <li>To respond to support emails sent to support@mindandhearthub.shop.</li>
+          <li>To respond to support emails sent to {SUPPORT_EMAIL}.</li>
           <li>To protect the site against abuse, fraud, and security threats.</li>
           <li>To improve website reliability and user experience.</li>
         </ul>
@@ -49,15 +50,14 @@ export default function PrivacyPage() {
           Payment processing
         </h2>
         <p>
-          Payments are processed by trusted third-party providers. We do not
-          store full payment card numbers on our servers. Provider privacy
-          policies apply to payment data they process on our behalf.
+          Orders are requested by email. We then send payment instructions. We
+          do not process card payments on this website.
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">Cookies</h2>
         <p>
-          We may use essential cookies required for secure checkout sessions and
-          site functionality. These cookies are configured with secure,
-          HTTP-only, and SameSite attributes where applicable.
+          We may use essential cookies required for site functionality. These
+          cookies are configured with secure, HTTP-only, and SameSite attributes
+          where applicable.
         </p>
         <h2 className="text-2xl font-semibold text-[var(--ink)]">Your rights</h2>
         <p>
@@ -68,10 +68,10 @@ export default function PrivacyPage() {
         <p>
           Questions about this policy? Email us at{" "}
           <a
-            href="mailto:support@mindandhearthub.shop"
+            href={SUPPORT_MAILTO}
             className="text-[var(--link-blue)] hover:underline"
           >
-            support@mindandhearthub.shop
+            {SUPPORT_EMAIL}
           </a>{" "}
           or visit our{" "}
           <Link href="/contact" className="text-[var(--link-blue)] hover:underline">

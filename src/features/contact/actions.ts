@@ -2,14 +2,9 @@
 
 import DOMPurify from "isomorphic-dompurify";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-import { getBookBySlug } from "@/features/books/data/books";
-import { getPaymentService, getProductCheckoutUrl } from "@/features/payments";
-import type { PaymentProvider } from "@/features/payments";
 import { assertSameOrigin } from "@/lib/security/csrf";
 import { getClientIp, rateLimit } from "@/lib/security/rate-limit";
-import { absoluteUrl } from "@/lib/utils";
-import { checkoutSchema, contactFormSchema } from "@/lib/validations/forms";
+import { contactFormSchema } from "@/lib/validations/forms";
 
 export type ActionState = {
   success: boolean;
@@ -86,80 +81,4 @@ export async function submitContactForm(
     success: true,
     message: "Thanks! Your message has been sent. We’ll reply shortly.",
   };
-}
-
-export async function startCheckout(formData: FormData): Promise<void> {
-  const sameOrigin = await assertSameOrigin();
-  if (!sameOrigin) {
-    throw new Error("Invalid request origin.");
-  }
-
-  const headerStore = await headers();
-  const ip = getClientIp(headerStore);
-  const limited = rateLimit(`checkout:${ip}`, 10, 60_000);
-
-  if (!limited.success) {
-    throw new Error("Too many checkout attempts. Please wait a moment.");
-  }
-
-  const parsed = checkoutSchema.safeParse({
-    productId: formData.get("productId"),
-    slug: formData.get("slug"),
-    provider:
-      formData.get("provider") || process.env.PAYMENT_PROVIDER || "external",
-    email: formData.get("email") || undefined,
-  });
-
-  if (!parsed.success) {
-    throw new Error("Invalid checkout request.");
-  }
-
-  const book = getBookBySlug(parsed.data.slug);
-  if (!book || book.id !== parsed.data.productId) {
-    throw new Error("Product not found.");
-  }
-
-  const externalUrl =
-    book.pricing.checkoutUrl ?? getProductCheckoutUrl(book.pricing.checkoutUrlEnv);
-  if (parsed.data.provider === "external" || !parsed.data.provider) {
-    if (externalUrl) {
-      redirect(externalUrl);
-    }
-    if (process.env.NODE_ENV === "development") {
-      redirect(`/books/${book.slug}/success?demo=1`);
-    }
-    throw new Error("Checkout URL is not configured.");
-  }
-
-  const provider = parsed.data.provider as PaymentProvider;
-  const paymentService = getPaymentService(provider);
-
-  const providerProductId =
-    provider === "paddle"
-      ? process.env.PADDLE_PRICE_ID || process.env.NEXT_PUBLIC_PADDLE_PRICE_ID
-      : process.env.STRIPE_PRICE_ID || process.env.NEXT_PUBLIC_STRIPE_PRICE_ID;
-
-  try {
-    const session = await paymentService.createCheckoutSession({
-      productId: book.id,
-      slug: book.slug,
-      price: book.pricing.price,
-      currency: book.pricing.currency,
-      title: book.title,
-      successUrl: absoluteUrl(
-        `/books/${book.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
-      ),
-      cancelUrl: absoluteUrl(`/books/${book.slug}#pricing`),
-      customerEmail: parsed.data.email,
-      providerProductId,
-    });
-
-    redirect(session.checkoutUrl);
-  } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn("[checkout-demo]", error);
-      redirect(`/books/${book.slug}/success?demo=1`);
-    }
-    throw error;
-  }
 }

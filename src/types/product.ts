@@ -39,26 +39,13 @@ export type ProductFaq = {
   answer: string;
 };
 
-export type ProductCurrency = "USD" | "EUR";
-
-export type ProductPriceOption = {
-  price: number;
-  currency: ProductCurrency;
-  compareAtPrice?: number;
-  checkoutUrl?: string;
-  checkoutUrlEnv?: string;
-};
+export type ProductCurrency = "EUR";
 
 export type ProductPricing = {
   price: number;
-  currency: string;
+  currency: ProductCurrency;
   compareAtPrice?: number;
   features: string[];
-  checkoutUrl?: string;
-  checkoutUrlEnv?: string;
-  currencyOptions?: ProductPriceOption[];
-  stripePriceId?: string;
-  paddlePriceId?: string;
 };
 
 export type DigitalProduct = {

@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CurrencyCheckout } from "@/components/shared/currency-checkout";
-import { getProductCheckoutUrl } from "@/features/payments";
+import { OrderButton } from "@/components/shared/order-button";
 import { getProductTypeLabel } from "@/features/products/data/catalog";
 import { formatPrice } from "@/lib/utils";
 import type { DigitalProduct } from "@/types/product";
@@ -22,20 +21,6 @@ export function HeroSection({ book }: HeroSectionProps) {
 
   const previewHref = book.previews.length > 0 ? "#preview" : "#about";
   const isComingSoon = book.status === "coming_soon";
-  const checkoutOptions = (book.pricing.currencyOptions ?? [
-    {
-      price: book.pricing.price,
-      currency: book.pricing.currency as "USD" | "EUR",
-      compareAtPrice: book.pricing.compareAtPrice,
-      checkoutUrl: book.pricing.checkoutUrl,
-      checkoutUrlEnv: book.pricing.checkoutUrlEnv,
-    },
-  ]).map((option) => ({
-    ...option,
-    checkoutUrl:
-      option.checkoutUrl ??
-      getProductCheckoutUrl(option.checkoutUrlEnv, !book.pricing.currencyOptions),
-  }));
 
   return (
     <section className="relative overflow-hidden text-[var(--ink)]">
@@ -76,7 +61,7 @@ export function HeroSection({ book }: HeroSectionProps) {
                 <Link href="/contact">Get notified</Link>
               </Button>
             ) : (
-              <CurrencyCheckout options={checkoutOptions} />
+              <OrderButton productId={book.id} />
             )}
             <Button asChild variant="secondary" size="lg">
               <Link href={previewHref}>

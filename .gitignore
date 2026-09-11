@@ -13,6 +13,7 @@ coverage
 
 # Next.js
 .next/
+.next-isolated/
 out/
 
 # Production
@@ -42,7 +43,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Product PDFs live on Whop — do not keep in this repo
+# Product PDFs — do not keep in this repo
 content/books/**/*.pdf
 product-pdfs/
 

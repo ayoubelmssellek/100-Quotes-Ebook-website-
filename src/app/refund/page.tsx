@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
@@ -41,10 +41,10 @@ export default function RefundPage() {
           Contact us within 7 days of purchase with your order email and
           transaction ID at{" "}
           <a
-            href="mailto:support@mindandhearthub.shop"
+            href={SUPPORT_MAILTO}
             className="text-[var(--link-blue)] hover:underline"
           >
-            support@mindandhearthub.shop
+            {SUPPORT_EMAIL}
           </a>
           . We review each request carefully and respond as quickly as possible.
         </p>

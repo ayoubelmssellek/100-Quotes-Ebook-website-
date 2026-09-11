@@ -79,7 +79,7 @@ export function SiteFooter() {
       <div className="border-t border-[var(--hairline)]">
         <div className="mx-auto flex max-w-[1120px] flex-col gap-2 px-6 py-5 text-sm text-[var(--steel)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Mind & Heart Hub. All rights reserved.</p>
-          <p>Secure checkout · Instant access</p>
+          <p>Order by email · Digital delivery</p>
         </div>
       </div>
     </footer>

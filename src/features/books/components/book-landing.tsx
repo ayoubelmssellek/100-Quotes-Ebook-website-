@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { PreviewSection } from "@/components/sections/preview-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { OrderFlowProvider } from "@/features/orders/order-flow-provider";
 import type { DigitalProduct } from "@/types/product";
 
 type BookLandingProps = {
@@ -14,7 +15,7 @@ type BookLandingProps = {
 
 export function BookLanding({ book }: BookLandingProps) {
   return (
-    <>
+    <OrderFlowProvider>
       <HeroSection book={book} />
       <AboutSection book={book} />
       {book.benefits.length > 0 ? <BenefitsSection book={book} /> : null}
@@ -25,6 +26,6 @@ export function BookLanding({ book }: BookLandingProps) {
       <PricingSection book={book} />
       {book.faqs.length > 0 ? <FaqSection book={book} /> : null}
       <ContactSection />
-    </>
+    </OrderFlowProvider>
   );
 }

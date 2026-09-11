@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
-import { CurrencyCheckout } from "@/components/shared/currency-checkout";
-import { getProductCheckoutUrl } from "@/features/payments";
+import { OrderButton } from "@/components/shared/order-button";
 import { formatPrice } from "@/lib/utils";
 import type { DigitalProduct } from "@/types/product";
 
@@ -10,20 +9,6 @@ type PricingSectionProps = {
 
 export function PricingSection({ book }: PricingSectionProps) {
   const isComingSoon = book.status === "coming_soon";
-  const checkoutOptions = (book.pricing.currencyOptions ?? [
-    {
-      price: book.pricing.price,
-      currency: book.pricing.currency as "USD" | "EUR",
-      compareAtPrice: book.pricing.compareAtPrice,
-      checkoutUrl: book.pricing.checkoutUrl,
-      checkoutUrlEnv: book.pricing.checkoutUrlEnv,
-    },
-  ]).map((option) => ({
-    ...option,
-    checkoutUrl:
-      option.checkoutUrl ??
-      getProductCheckoutUrl(option.checkoutUrlEnv, !book.pricing.currencyOptions),
-  }));
 
   const productLabel =
     book.type === "ebook"
@@ -43,7 +28,7 @@ export function PricingSection({ book }: PricingSectionProps) {
           <p className="mt-4 text-lg leading-relaxed text-[var(--slate)]">
             {isComingSoon
               ? "This product is not for sale yet."
-              : "Pay securely. Instant file access after checkout."}
+              : "Order by email. We’ll send payment instructions."}
           </p>
         </div>
 
@@ -57,22 +42,19 @@ export function PricingSection({ book }: PricingSectionProps) {
             </h3>
             <div className="mt-4 flex items-end gap-3">
               <p className="text-5xl font-semibold tracking-tight text-[var(--ink)]">
-                {formatPrice(
-                  checkoutOptions[0].price,
-                  checkoutOptions[0].currency,
-                )}
+                {formatPrice(book.pricing.price, book.pricing.currency)}
               </p>
-              {checkoutOptions[0].compareAtPrice ? (
+              {book.pricing.compareAtPrice ? (
                 <p className="mb-2 text-base text-[var(--stone)] line-through">
                   {formatPrice(
-                    checkoutOptions[0].compareAtPrice,
-                    checkoutOptions[0].currency,
+                    book.pricing.compareAtPrice,
+                    book.pricing.currency,
                   )}
                 </p>
               ) : null}
             </div>
             <p className="mt-2 text-sm text-[var(--steel)]">
-              One-time payment · Instant digital delivery
+              One-time payment · Digital delivery
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -98,16 +80,13 @@ export function PricingSection({ book }: PricingSectionProps) {
                 Notify Me
               </a>
             ) : (
-              <CurrencyCheckout
-                options={checkoutOptions}
-                className="mt-8"
-              />
+              <OrderButton productId={book.id} className="mt-8 w-full" />
             )}
 
             <p className="mt-4 text-center text-xs leading-relaxed text-[var(--steel)]">
               {isComingSoon
                 ? "We’ll let you know when this product launches."
-                : "Secure checkout. Your files are available after payment."}
+                : "Your files are sent by email after payment."}
             </p>
           </article>
         </div>

@@ -10,7 +10,7 @@ type ProductGridProps = {
 export function ProductGrid({
   products,
   title = "Shop digital products",
-  subtitle = "E-books and kids science stories — pay once, access instantly.",
+  subtitle = "E-books and kids science stories — submit your order online, then receive your files.",
 }: ProductGridProps) {
   return (
     <section id="shop" className="scroll-mt-24 bg-[var(--canvas)] py-14 md:py-20">

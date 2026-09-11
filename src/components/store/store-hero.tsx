@@ -36,7 +36,7 @@ export function StoreHero() {
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[var(--slate)]">
           Motivation e-books and kids science stories —
-          pay once, get instant digital access.
+          order by email, then receive your files after payment.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button asChild variant="accent" size="lg">

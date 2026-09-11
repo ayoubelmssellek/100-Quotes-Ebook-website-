@@ -2,10 +2,10 @@
 
 Next.js storefront for e-books and digital downloads:
 
-- **100 Inspirational Quotes for Self-Improvement** — $12
-- **Everyday Motivation** — $12
+- **100 Inspirational Quotes for Self-Improvement** — €11
+- **Everyday Motivation** — €11
 - **The Ultimate Motivation Bundle** — €100 (editable PDF + both motivation PDFs)
-- **Kids Science Stories** — singles ($12) + Basic / Premium / Pro packs
+- **Kids Science Stories** — singles (€11) + Basic / Premium / Pro packs
 
 ## Stack
 
@@ -26,21 +26,19 @@ npm run dev
 
 Products live in `src/features/products/data/catalog.ts`. Add PDFs under `content/books/` and map them in `src/app/api/download/[bookId]/route.ts`.
 
-## Payments (Whop)
+## Orders
 
-Create each product on Whop, upload the files there, then paste the **checkout URL** into `.env` / Vercel:
+**Order Now** sends the request through EmailJS (frontend only) to `contact@mindandhearthub.shop`. The customer stays on the site and sees a success or error message. Support remains `support@mindandhearthub.shop`.
+
+Set these public values in `.env.local` / Vercel (do not add the EmailJS private key):
 
 ```env
-PAYMENT_PROVIDER=whop
-NEXT_PUBLIC_WHOP_CHECKOUT_QUOTES=https://whop.com/checkout/...
-NEXT_PUBLIC_WHOP_CHECKOUT_EVERYDAY=https://whop.com/checkout/...
-NEXT_PUBLIC_WHOP_CHECKOUT_ULTIMATE_EUR=https://whop.com/checkout/...
-NEXT_PUBLIC_WHOP_CHECKOUT_KIDS_01=https://whop.com/checkout/...
-# ... see .env.example for all keys
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
 ```
 
-**Buy Now** on the site redirects to that Whop link. Whop handles payment + file delivery.  
-Change a link anytime in env vars — no code change.
+In the EmailJS template, set the recipient to `contact@mindandhearthub.shop` and include variables such as `{{product_name}}`, `{{plan}}`, `{{price}}`, `{{order_id}}`, `{{order_date}}`, and `{{message}}`.
 
 ## Scripts
 

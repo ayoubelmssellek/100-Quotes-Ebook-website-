@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -41,7 +42,7 @@ export default function TermsPage() {
           Acceptable use
         </h2>
         <ul className="list-disc space-y-2 pl-5">
-          <li>Do not attempt to reverse engineer or abuse checkout systems.</li>
+          <li>Do not attempt to reverse engineer or abuse order or payment processes.</li>
           <li>Do not use automated tools to overwhelm forms or APIs.</li>
           <li>Do not redistribute purchased files without written permission.</li>
         </ul>
@@ -57,10 +58,10 @@ export default function TermsPage() {
         <p>
           For questions about these terms, email{" "}
           <a
-            href="mailto:support@mindandhearthub.shop"
+            href={SUPPORT_MAILTO}
             className="text-[var(--link-blue)] hover:underline"
           >
-            support@mindandhearthub.shop
+            {SUPPORT_EMAIL}
           </a>{" "}
           or visit our{" "}
           <Link href="/contact" className="text-[var(--link-blue)] hover:underline">

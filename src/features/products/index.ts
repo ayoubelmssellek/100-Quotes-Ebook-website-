@@ -4,6 +4,7 @@ export {
   getAvailableProducts,
   getFeaturedProducts,
   getProductBySlug,
+  getProductById,
   getAllProductSlugs,
   getProductsByType,
   getProductTypeLabel,

@@ -105,7 +105,7 @@ const coreProducts: DigitalProduct[] = [
       {
         question: "How do I receive the book?",
         answer:
-          "After a successful purchase, you receive an instant download link by email and on the confirmation page.",
+          "Send an order request by email. After payment, we send your download link to your inbox.",
       },
       {
         question: "Is this a PDF?",
@@ -115,7 +115,7 @@ const coreProducts: DigitalProduct[] = [
       {
         question: "Can I download it multiple times?",
         answer:
-          "Yes. You can re-download anytime using the secure link in your confirmation email.",
+          "Yes. You can re-download anytime using the secure link in your order email.",
       },
     ],
     pricing: {
@@ -128,14 +128,9 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrl: "https://whop.com/checkout/plan_8dw15g0evaQQR",
-      currencyOptions: [
-        { price: 11, currency: "EUR" },
-        { price: 12, currency: "USD", checkoutUrl: "https://whop.com/checkout/plan_8dw15g0evaQQR" },
-      ],
     },
     seo: {
-      title: "100 Inspirational Quotes for Self-Improvement | E-book $12",
+      title: "100 Inspirational Quotes for Self-Improvement | E-book €11",
       description:
         "A motivational e-book with 100 inspirational quotes and practical guidance for confidence, habits, and a positive mindset.",
     },
@@ -238,7 +233,7 @@ const coreProducts: DigitalProduct[] = [
       {
         question: "How do I receive it?",
         answer:
-          "After purchase you get an instant PDF download link by email and on the success page.",
+          "Send an order request by email. After payment, we send your PDF download link to your inbox.",
       },
       {
         question: "Is it only for self-improvement readers?",
@@ -256,22 +251,9 @@ const coreProducts: DigitalProduct[] = [
         "Lifetime access",
         "Free updates included",
       ],
-      checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
-      currencyOptions: [
-        {
-          price: 11,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_ELoE9GTCBurro",
-        },
-        {
-          price: 12,
-          currency: "USD",
-          checkoutUrl: "https://whop.com/checkout/plan_tykS7fWdVe0h8",
-        },
-      ],
     },
     seo: {
-      title: "Everyday Motivation | 54-Page Motivational E-book $12",
+      title: "Everyday Motivation | 54-Page Motivational E-book €11",
       description:
         "54 inspiring pages on life, growth, and perspective. Short motivational pieces about family, friends, time, growth, and purpose.",
     },
@@ -321,7 +303,7 @@ const coreProducts: DigitalProduct[] = [
     benefits: [
       {
         title: "One complete bundle",
-        description: "Three complementary resources delivered together after checkout.",
+        description: "Three complementary resources delivered together after your order.",
         icon: "package-check",
       },
       {
@@ -339,7 +321,7 @@ const coreProducts: DigitalProduct[] = [
       },
       {
         question: "How do I receive the files?",
-        answer: "After successful payment, the three PDF files are delivered instantly.",
+        answer: "After payment, the three PDF files are delivered by email.",
       },
     ],
     pricing: {
@@ -351,17 +333,6 @@ const coreProducts: DigitalProduct[] = [
         "Everyday Motivation PDF",
         "Instant digital delivery",
         "Lifetime access",
-      ],
-      currencyOptions: [
-        {
-          price: 100,
-          currency: "EUR",
-          checkoutUrl: "https://whop.com/checkout/plan_9tIMi86R9B5um",
-        },
-        {
-          price: 116,
-          currency: "USD",
-        },
       ],
     },
     seo: {
@@ -386,6 +357,10 @@ export function getAllProducts(): DigitalProduct[] {
 
 export function getProductBySlug(slug: string): DigitalProduct | undefined {
   return products.find((product) => product.slug === slug);
+}
+
+export function getProductById(id: string): DigitalProduct | undefined {
+  return products.find((product) => product.id === id);
 }
 
 export function getAvailableProducts(): DigitalProduct[] {
