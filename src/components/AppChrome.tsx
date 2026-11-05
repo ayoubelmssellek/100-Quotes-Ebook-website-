@@ -1,30 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 
+/**
+ * Payment-only shell: no store header, footer, or catalog chrome.
+ * Buyers who land here after IPTV checkout cannot browse other site pages.
+ */
 export default function AppChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isCheckoutFlow = pathname.startsWith("/checkout") || pathname.startsWith("/thank-you");
+  const isPayExit = pathname.startsWith("/pay");
 
-  if (isCheckoutFlow) {
-    return (
-      <>
-        {children}
-        <WhatsAppFloat />
-      </>
-    );
+  if (isPayExit) {
+    return <>{children}</>;
   }
 
-  return (
-    <>
-      <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
-      <WhatsAppFloat />
-    </>
-  );
+  return <main className="flex min-h-full flex-1 flex-col bg-black">{children}</main>;
 }

@@ -1,203 +1,203 @@
 export const site = {
-  name: "PortugalIPTV",
-  tagline: "IPTV Portugal — veja mais, pague menos",
-  email: "support@portugaliptvpro.shop",
-  phone: "0673897450",
-  whatsappDisplay: "0673897450",
-  /** International digits for wa.me (Morocco +212, local 0 dropped) */
-  whatsappIntl: "212673897450",
+  name: "StreamNova",
+  tagline: "Watch More, Pay Less",
+  email: "support@mindandhearthub.shop",
+  phone: "",
+  whatsappDisplay: "WhatsApp",
+  /** International digits for wa.me — same support line as IPTV orders (not shown as text). */
+  whatsappIntl: "212637573773",
   demoNotice:
-    "A PortugalIPTV é um website de demonstração criado para aprendizagem em Next.js. Não é um serviço IPTV real e não vende acesso a televisão em direto ou conteúdos protegidos.",
+    "StreamNova is a fictional practice/demo website built for learning Next.js. It is not a real streaming service and does not sell access to live TV or media.",
 };
 
 export const navLinks = [
-  { href: "/", label: "Início" },
-  { href: "/subscriptions", label: "Subscrições" },
-  { href: "/renew", label: "Renovar" },
-  { href: "/why-us", label: "Porquê nós?" },
-  { href: "/installation-guides", label: "Instalação" },
+  { href: "/", label: "Home" },
+  { href: "/subscriptions", label: "Subscriptions" },
+  { href: "/renew", label: "Renew" },
+  { href: "/why-us", label: "Why Us?" },
+  { href: "/installation-guides", label: "Installation Guides" },
   { href: "/blog", label: "Blog" },
 ];
 
 export const featureBullets = [
-  "IPTV Portugal em 4K · VPN incluída",
-  "Streaming estável — menos buffering",
-  "EPG e guia TV incluídos",
-  "Canais IPTV PT e internacionais",
-  "Mais de 35.000 canais mundiais",
-  "140K+ filmes e séries em UHD / IPTV 4K Portugal",
-  "Desporto e Sport TV em 4K / UHD",
-  "Atualizações semanais de filmes e séries",
-  "Pedidos de canais e VOD",
-  "PPV em direto em HD / 4K",
-  "IPTV app, Smart TV e box IPTV Android",
-  "Catch-up — não perca programas",
-  "Garantia de 7 dias",
-  "Suporte 24/7",
+  "Stream USA TV in 4K · VPN included",
+  "No buffering — fast, stable streaming",
+  "EPG & TV guide included",
+  "US / UK / CA / Europe — all in one",
+  "35,000+ worldwide channels",
+  "140K+ movies & series in UHD / 4K",
+  "Watch all sports in 4K / UHD",
+  "Weekly updates: new movies & series",
+  "Request channels & VOD anytime",
+  "Watch all PPV live in HD / 4K",
+  "Works on all devices — watch anywhere",
+  "Catch-up — never miss a show",
+  "7-day money-back guarantee",
+  "24/7 support — always here for you",
 ];
 
 export const checklistFeatures = [
-  "35.000+ Canais IPTV",
-  "140.000+ VOD",
-  "IPTV 4K Portugal",
-  "Smart TV e IPTV app",
-  "Suporte 24/7",
-  "99,9% Uptime",
-  "Tecnologia anti-freeze",
-  "Streams encriptados",
+  "35,000+ Channels",
+  "140,000+ VOD",
+  "4K / UHD Quality",
+  "All Devices Supported",
+  "24/7 Customer Support",
+  "99.9% Uptime",
+  "Anti-Freeze Technology",
+  "Secure Encrypted Streams",
 ];
 
 export const whyCards = [
   {
-    title: "Instalação fácil",
-    body: "Comece em minutos com a melhor app IPTV para Smart TV, IPTV Android ou box IPTV — ativação simples, sem complicações.",
+    title: "Easy Installation",
+    body: "Install and start streaming superior quality service in under two minutes.",
   },
   {
-    title: "Menos bloqueios do ISP",
-    body: "VPN integrada para ajudar a proteger a ligação e reduzir limitações do operador.",
+    title: "No ISP Blocks",
+    body: "High-quality integrated VPN keeps you protected from ISP tracking and throttling.",
   },
   {
-    title: "Servidores rápidos e estáveis",
-    body: "Serviço IPTV pensado para estabilidade em Portugal — ideal para quem procura comprar IPTV com qualidade 4K.",
+    title: "Fast and Stable Servers",
+    body: "Enjoy 99.9% uptime on highly reliable, fast streaming servers.",
   },
   {
-    title: "IPTV português e internacional",
-    body: "Canais IPTV em português, Sport TV e catálogo mundial num só plano IPTV PT.",
+    title: "US / Canada / UK / Europe",
+    body: "Premium packs with PPV & sports — over 35,000 live channels and VOD titles.",
   },
   {
-    title: "App, Smart TV e box",
-    body: "Funciona com IPTV app, Smart TV, box Android IPTV e o melhor box para IPTV que já tiver em casa.",
+    title: "Support All Devices",
+    body: "Smart TVs, MAG boxes, smartphones, tablets, Fire Sticks, computers, Android boxes.",
   },
   {
-    title: "Suporte 24/7",
-    body: "Ajuda com instalação, renovação e configuração do aparelho IPTV no seu dispositivo.",
+    title: "24/7 Support",
+    body: "US-based support team ready to help you anytime with setup and renewals.",
   },
 ];
 
 export const planFeatures = [
-  "Canais IPTV em direto",
-  "140K+ filmes e séries",
-  "IPTV 4K Portugal",
-  "Guia TV (EPG)",
-  "Smart TV, app e box",
-  "VPN incluída",
-  "Tecnologia anti-freeze",
-  "Suporte 24/7",
+  "35K+ live channels",
+  "140K+ movies & series",
+  "4K / UHD streaming",
+  "EPG TV guide",
+  "All devices supported",
+  "VPN protection included",
+  "Anti-freeze technology",
+  "24/7 customer support",
 ];
 
 export const plans = {
   one: [
     {
       id: "1m",
-      label: "1 Mês",
+      label: "1 Month",
       price: 15,
       compare: 25,
       popular: true,
-      checkoutUrl: "https://buy.polar.sh/polar_cl_bo1m21CCib3EtvA6Q4RwPJRvy9ADF7I4Ma6xl2Gdceh",
     },
     {
       id: "3m",
-      label: "3 Meses",
+      label: "3 Months",
       price: 35.99,
       compare: 50,
-      checkoutUrl: "",
     },
     {
       id: "6m",
-      label: "6 Meses",
+      label: "6 Months",
       price: 40,
       compare: 70,
-      checkoutUrl: "",
     },
     {
       id: "1y",
-      label: "1 Ano",
-      badge: "Melhor valor — 1 mês grátis",
+      label: "1 Year",
+      badge: "Best Value — 1 Month Free",
       price: 70,
       compare: 100,
       highlight: true,
-      checkoutUrl: "",
     },
   ],
   two: [
     {
       id: "1m2",
-      label: "1 Mês",
+      label: "1 Month",
       price: 25,
       compare: 40,
       popular: true,
-      checkoutUrl: "",
     },
     {
       id: "3m2",
-      label: "3 Meses",
+      label: "3 Months",
       price: 49.99,
       compare: 70,
-      checkoutUrl: "",
     },
     {
       id: "6m2",
-      label: "6 Meses",
+      label: "6 Months",
       price: 65,
       compare: 100,
-      checkoutUrl: "",
     },
     {
       id: "1y2",
-      label: "1 Ano",
-      badge: "Melhor valor — 1 mês grátis",
+      label: "1 Year",
+      badge: "Best Value — 1 Month Free",
       price: 99,
       compare: 140,
       highlight: true,
-      checkoutUrl: "",
     },
   ],
 };
 
 export const faqs = [
   {
-    q: "Quanto custa o IPTV? Qual é o IPTV preço?",
-    a: "O IPTV preço na PortugalIPTV começa nos planos mensais e desce no anual. Veja a página de planos para comparar e comprar IPTV com o valor certo para si — pagamento único, sem surpresas.",
+    q: "What is StreamNova and how does it work?",
+    a: "StreamNova is a fictional streaming demo that shows how an entertainment subscription site can look. TV and on-demand libraries arrive over the internet to compatible devices.",
   },
   {
-    q: "Como comprar IPTV Portugal?",
-    a: "Escolha o plano, clique em Comprar Agora e conclua o checkout. Em poucos minutos recebe acesso ao serviço IPTV — ideal se procura buy IPTV Portugal com ativação rápida.",
+    q: "How do I subscribe?",
+    a: "Choose your preferred plan, complete the demo checkout, and login details are illustrated as emailed instantly. Nothing is charged on this practice site.",
   },
   {
-    q: "Existe teste IPTV ou IPTV teste grátis?",
-    a: "Em produtos reais, um teste IPTV ou IPTV teste grátis ajuda a testar iptv gratis antes de comprar. Neste demo o fluxo é ilustrativo — explore planos e guias e, quando disponível, peça IPTV free test ao suporte.",
+    q: "What channels are included?",
+    a: "The demo markets 35,000+ live channels — sports, PPV events, entertainment, movies, news, kids, and worldwide packs — categorized for easy browsing.",
   },
   {
-    q: "Qual é o melhor IPTV Portugal?",
-    a: "O melhor IPTV Portugal combina canais IPTV PT, estabilidade 4K, suporte e instalação simples. A PortugalIPTV foca-se em IPTV em Portugal com Sport TV, VOD e IPTV 4K Portugal.",
+    q: "Does it include movies and TV series?",
+    a: "Yes — 140,000+ VOD movies and shows in HD, FHD, and 4K with frequent catalog updates.",
   },
   {
-    q: "O que inclui o serviço IPTV?",
-    a: "Canais IPTV, desporto (incluindo Sport TV / IPTV Sport TV), filmes, séries e streaming 4K. Funciona com IPTV app, Smart TV e box IPTV Android.",
+    q: "Which devices are compatible?",
+    a: "Fire Stick & Fire TV, Smart TVs (Samsung, LG, Android TV), Android phones & tablets, iPhone & iPad, Android TV Box / Google TV, MAG boxes, Windows, macOS, Linux, and common player apps.",
   },
   {
-    q: "IPTV funciona na Smart TV e em box Android?",
-    a: "Sim. Use a melhor app IPTV para Smart TV ou uma box Android IPTV / box para IPTV. Também pode usar IPTV Android no telemóvel ou tablet.",
+    q: "How do I set everything up?",
+    a: "After subscribing, follow step-by-step guides for your device. Install a compatible app, enter login details, and stream within minutes.",
   },
   {
-    q: "Preciso de um aparelho IPTV especial?",
-    a: "Não é obrigatório. Qualquer Smart TV, Fire Stick, box IPTV ou PC serve. Se quiser o melhor box IPTV, escolha um box Android IPTV estável com boa rede.",
+    q: "Can I use multiple devices at once?",
+    a: "A single plan includes one active connection. Stream on multiple devices simultaneously only with additional connections.",
   },
   {
-    q: "Como instalar depois de comprar?",
-    a: "Siga os guias: instale a IPTV app, introduza as credenciais e comece a ver. One click IPTV em alguns players torna o login ainda mais simples.",
+    q: "What if my stream buffers or freezes?",
+    a: "Switch channels then return, restart the app or device, restart your router, and ensure only one device uses the connection. Support can troubleshoot further.",
   },
   {
-    q: "Posso renovar o plano?",
-    a: "Sim. Use a página Renovar ou compre um novo plano IPTV PT quando o atual terminar.",
+    q: "Do you offer refunds?",
+    a: "The demo describes a 7-day refund policy. No real money is taken here, so no real refunds apply.",
   },
   {
-    q: "IPTV legal — o que devo saber?",
-    a: "Este website é uma demonstração. Em contexto real, confirme a legalidade do serviço IPTV e dos direitos de transmissão em Portugal.",
+    q: "When will I receive login details?",
+    a: "In a live product they arrive by email after payment with automatic activation. Here, the confirmation screen shows sample credentials instantly.",
   },
   {
-    q: "Como contactar o suporte?",
-    a: "Por email ou WhatsApp. Ajudamos com compra, instalação e renovação do seu IPTV português.",
+    q: "Does StreamNova include an EPG (TV Guide)?",
+    a: "Yes — EPG support for most channels helps you track schedules for sports, movies, and TV programs.",
+  },
+  {
+    q: "Do I need a VPN?",
+    a: "Not required. Servers are described as secure and encrypted. You may still use a VPN if preferred.",
+  },
+  {
+    q: "How can I contact support?",
+    a: "Reach us by email, live chat placeholders, or phone. Support messaging is available 24/7 for setup and technical questions.",
   },
 ];
 
@@ -233,3 +233,14 @@ export const testimonials = [
     text: "One plan, every screen in the apartment. Renewing was simpler than my old cable login.",
   },
 ];
+
+export const posterImages = [
+  "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1574267432553-4b4628081c31?auto=format&fit=crop&w=600&q=80",
+];
+
+export const payments = ["Visa", "Mastercard", "Amex", "PayPal", "Apple Pay", "Google Pay", "Bitcoin"];
