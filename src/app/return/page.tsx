@@ -142,7 +142,7 @@ export default function PaymentReturnPage() {
             href={`https://wa.me/212637573773?text=${encodeURIComponent(copy.whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 flex w-full items-center justify-center rounded-[4px] bg-[#25D366] py-3 text-[15px] font-semibold text-white transition hover:bg-[#20BD5A]"
+            className="mt-3 flex w-full items-center justify-center rounded-[4px] bg-[#25D366] py-3 text-[15px] font-semibold !text-white transition hover:bg-[#20BD5A] hover:!text-white"
           >
             {copy.whatsapp}
           </a>
